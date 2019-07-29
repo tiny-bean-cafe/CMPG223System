@@ -21,6 +21,8 @@ namespace GitCTest
         {
             Form2 objekt = new Form2();
             objekt.ShowDialog();
+			
+			String text = "3rd Test";
         }
     }
 }
