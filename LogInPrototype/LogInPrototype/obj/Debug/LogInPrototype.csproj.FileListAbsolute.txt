@@ -1,0 +1,12 @@
+E:\CMPG213\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe.config
+E:\CMPG213\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe
+E:\CMPG213\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.pdb
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Form1.resources
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Owner.resources
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Properties.Resources.resources
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.GenerateResource.Cache
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.exe
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.pdb
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Employee.resources
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csprojAssemblyReference.cache
+E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.CoreCompileInputs.cache
