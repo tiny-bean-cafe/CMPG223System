@@ -10,3 +10,15 @@ E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.pdb
 E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Employee.resources
 E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csprojAssemblyReference.cache
 E:\CMPG213\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.CoreCompileInputs.cache
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe.config
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.pdb
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csprojAssemblyReference.cache
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Employee.resources
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Form1.resources
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Owner.resources
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Properties.Resources.resources
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.GenerateResource.cache
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.CoreCompileInputs.cache
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.exe
+C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.pdb
