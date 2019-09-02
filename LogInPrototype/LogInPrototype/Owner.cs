@@ -44,7 +44,7 @@ namespace LogInPrototype
 
         private void Owner_Load(object sender, EventArgs e)
         {
-            Form1 obj = new Form1();
+            LogIn obj = new LogIn();
            
         }
     }

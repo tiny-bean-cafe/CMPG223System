@@ -22,3 +22,17 @@ C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223S
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.CoreCompileInputs.cache
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.exe
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.pdb
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData.mdf
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData_log.ldf
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe.config
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.pdb
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csprojAssemblyReference.cache
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Employee.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.LogIn.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Owner.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Properties.Resources.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.GenerateResource.cache
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.CoreCompileInputs.cache
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.exe
+C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.pdb
