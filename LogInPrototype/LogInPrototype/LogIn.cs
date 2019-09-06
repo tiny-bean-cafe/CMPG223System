@@ -17,7 +17,7 @@ namespace LogInPrototype
         {
             InitializeComponent();
         }
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
         SqlConnection connect;
         SqlDataAdapter adapter;
         SqlCommand command;
@@ -31,29 +31,42 @@ namespace LogInPrototype
             string sql = @"SELECT * FROM Staff";
             command = new SqlCommand(sql, connect);
             dataReader = command.ExecuteReader();
-
+            progressBarLogin.Visible = true;
+            int progressBarValue = 0;
+            progressBarLogin.Value = progressBarValue;
+           
             while (dataReader.Read())
             {
+                progressBarValue++;
                 if (tbUse.Text == dataReader.GetValue(1).ToString() && tbPass.Text == dataReader.GetValue(2).ToString())
                 {
+                    //MessageBox.Show(dataReader.GetValue(1).ToString());
                     if (dataReader.GetValue(3).ToString() == 'E'.ToString())
                     {
+                        progressBarLogin.Value = 100;
                         Employee emp = new Employee();
                         emp.ShowDialog();
                         this.Close();
+                        
                     }
                     else
                     {
+                        progressBarLogin.Value = 100;
                         Owner own = new Owner();
                         own.ShowDialog();
-                        this.Close(); 
+                        this.Close();
+                        
                     }
                 }
                 else
                 {
+                    progressBarLogin.Value = 100;
                     MessageBox.Show("User not found", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     tbUse.Text = "";
                     tbPass.Text = "";
+                    tbUse.Focus();
+                    progressBarLogin.Visible = false;
+                    progressBarLogin.Value = 0;
                     break;
                 }
             }

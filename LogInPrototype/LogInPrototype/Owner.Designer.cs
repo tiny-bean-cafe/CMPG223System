@@ -32,17 +32,17 @@
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageStock = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbStockQuantity = new System.Windows.Forms.TextBox();
+            this.tbStockDesc = new System.Windows.Forms.TextBox();
+            this.tbStockID = new System.Windows.Forms.TextBox();
+            this.btnStockAdd = new System.Windows.Forms.Button();
+            this.btnStockUpdate = new System.Windows.Forms.Button();
+            this.btnStockDelete = new System.Windows.Forms.Button();
+            this.dataGridStock = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,16 +63,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridSupplier = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -90,14 +88,15 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPageStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStock)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSupplier)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +114,8 @@
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.stockToolStripMenuItem.Text = "File";
@@ -126,10 +126,11 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPageStock);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
@@ -141,30 +142,30 @@
             this.tabControl1.Size = new System.Drawing.Size(687, 432);
             this.tabControl1.TabIndex = 4;
             // 
-            // tabPage1
+            // tabPageStock
             // 
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(679, 406);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Stock";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageStock.Controls.Add(this.label3);
+            this.tabPageStock.Controls.Add(this.label2);
+            this.tabPageStock.Controls.Add(this.label1);
+            this.tabPageStock.Controls.Add(this.tbStockQuantity);
+            this.tabPageStock.Controls.Add(this.tbStockDesc);
+            this.tabPageStock.Controls.Add(this.tbStockID);
+            this.tabPageStock.Controls.Add(this.btnStockAdd);
+            this.tabPageStock.Controls.Add(this.btnStockUpdate);
+            this.tabPageStock.Controls.Add(this.btnStockDelete);
+            this.tabPageStock.Controls.Add(this.dataGridStock);
+            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStock.Name = "tabPageStock";
+            this.tabPageStock.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageStock.Size = new System.Drawing.Size(679, 406);
+            this.tabPageStock.TabIndex = 0;
+            this.tabPageStock.Text = "Stock";
+            this.tabPageStock.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 97);
+            this.label3.Location = new System.Drawing.Point(107, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 12;
@@ -173,7 +174,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 62);
+            this.label2.Location = new System.Drawing.Point(107, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 11;
@@ -188,61 +189,61 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Stock ID:";
             // 
-            // textBox3
+            // tbStockQuantity
             // 
-            this.textBox3.Location = new System.Drawing.Point(237, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
+            this.tbStockQuantity.Location = new System.Drawing.Point(237, 97);
+            this.tbStockQuantity.Name = "tbStockQuantity";
+            this.tbStockQuantity.Size = new System.Drawing.Size(100, 20);
+            this.tbStockQuantity.TabIndex = 9;
             // 
-            // textBox2
+            // tbStockDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point(237, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.tbStockDesc.Location = new System.Drawing.Point(237, 59);
+            this.tbStockDesc.Name = "tbStockDesc";
+            this.tbStockDesc.Size = new System.Drawing.Size(100, 20);
+            this.tbStockDesc.TabIndex = 8;
             // 
-            // textBox1
+            // tbStockID
             // 
-            this.textBox1.Location = new System.Drawing.Point(237, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.tbStockID.Location = new System.Drawing.Point(237, 23);
+            this.tbStockID.Name = "tbStockID";
+            this.tbStockID.Size = new System.Drawing.Size(100, 20);
+            this.tbStockID.TabIndex = 7;
             // 
-            // button3
+            // btnStockAdd
             // 
-            this.button3.Location = new System.Drawing.Point(22, 140);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 29);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStockAdd.Location = new System.Drawing.Point(22, 140);
+            this.btnStockAdd.Name = "btnStockAdd";
+            this.btnStockAdd.Size = new System.Drawing.Size(86, 29);
+            this.btnStockAdd.TabIndex = 6;
+            this.btnStockAdd.Text = "Add";
+            this.btnStockAdd.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnStockUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(153, 141);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnStockUpdate.Location = new System.Drawing.Point(153, 141);
+            this.btnStockUpdate.Name = "btnStockUpdate";
+            this.btnStockUpdate.Size = new System.Drawing.Size(86, 29);
+            this.btnStockUpdate.TabIndex = 5;
+            this.btnStockUpdate.Text = "Update";
+            this.btnStockUpdate.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnStockDelete
             // 
-            this.button1.Location = new System.Drawing.Point(291, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStockDelete.Location = new System.Drawing.Point(291, 140);
+            this.btnStockDelete.Name = "btnStockDelete";
+            this.btnStockDelete.Size = new System.Drawing.Size(86, 30);
+            this.btnStockDelete.TabIndex = 4;
+            this.btnStockDelete.Text = "Delete";
+            this.btnStockDelete.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridStock
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 176);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(665, 224);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridStock.Location = new System.Drawing.Point(6, 205);
+            this.dataGridStock.Name = "dataGridStock";
+            this.dataGridStock.Size = new System.Drawing.Size(665, 195);
+            this.dataGridStock.TabIndex = 3;
             // 
             // tabPage2
             // 
@@ -272,7 +273,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 54);
+            this.label8.Location = new System.Drawing.Point(396, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 27;
@@ -391,16 +392,14 @@
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.textBox7);
             this.tabPage3.Controls.Add(this.textBox10);
-            this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.textBox11);
             this.tabPage3.Controls.Add(this.textBox12);
             this.tabPage3.Controls.Add(this.textBox13);
             this.tabPage3.Controls.Add(this.button7);
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.dataGridView3);
+            this.tabPage3.Controls.Add(this.dataGridSupplier);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -412,7 +411,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(385, 54);
+            this.label7.Location = new System.Drawing.Point(396, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 13);
             this.label7.TabIndex = 41;
@@ -441,15 +440,6 @@
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 38;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(108, 89);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Address:";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -467,13 +457,6 @@
             this.label13.Size = new System.Drawing.Size(62, 13);
             this.label13.TabIndex = 35;
             this.label13.Text = "Supplier ID:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(238, 89);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 34;
             // 
             // textBox12
             // 
@@ -516,13 +499,13 @@
             this.button9.Text = "Delete";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dataGridSupplier
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 168);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(665, 224);
-            this.dataGridView3.TabIndex = 28;
+            this.dataGridSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSupplier.Location = new System.Drawing.Point(7, 168);
+            this.dataGridSupplier.Name = "dataGridSupplier";
+            this.dataGridSupplier.Size = new System.Drawing.Size(665, 224);
+            this.dataGridSupplier.TabIndex = 28;
             // 
             // tabPage4
             // 
@@ -683,6 +666,12 @@
             this.tabPage6.Text = "Report";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            // 
             // Owner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -697,15 +686,15 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPageStock.ResumeLayout(false);
+            this.tabPageStock.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStock)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSupplier)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -718,17 +707,17 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPageStock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox tbStockQuantity;
+        private System.Windows.Forms.TextBox tbStockDesc;
+        private System.Windows.Forms.TextBox tbStockID;
+        private System.Windows.Forms.Button btnStockAdd;
+        private System.Windows.Forms.Button btnStockUpdate;
+        private System.Windows.Forms.Button btnStockDelete;
+        private System.Windows.Forms.DataGridView dataGridStock;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -750,16 +739,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridSupplier;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -777,5 +764,6 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
