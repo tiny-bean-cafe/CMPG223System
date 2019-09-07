@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Owner));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageStock = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,12 +64,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbSupCell = new System.Windows.Forms.TextBox();
+            this.tbSupEmail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tbSupName = new System.Windows.Forms.TextBox();
+            this.tbbSupID = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -88,7 +91,17 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.rbID = new System.Windows.Forms.RadioButton();
+            this.rbName = new System.Windows.Forms.RadioButton();
+            this.rbEmail = new System.Windows.Forms.RadioButton();
+            this.rbCell = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageStock.SuspendLayout();
@@ -99,6 +112,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSupplier)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,9 +142,15 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // tabControl1
             // 
@@ -141,6 +165,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(687, 432);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl1_Selected);
             // 
             // tabPageStock
             // 
@@ -388,17 +413,10 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.textBox10);
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.textBox12);
-            this.tabPage3.Controls.Add(this.textBox13);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.dataGridSupplier);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -411,7 +429,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(396, 54);
+            this.label7.Location = new System.Drawing.Point(6, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 13);
             this.label7.TabIndex = 41;
@@ -420,30 +438,30 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(396, 22);
+            this.label10.Location = new System.Drawing.Point(6, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 40;
             this.label10.Text = "Email:";
             // 
-            // textBox7
+            // tbSupCell
             // 
-            this.textBox7.Location = new System.Drawing.Point(526, 51);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 39;
+            this.tbSupCell.Location = new System.Drawing.Point(74, 120);
+            this.tbSupCell.Name = "tbSupCell";
+            this.tbSupCell.Size = new System.Drawing.Size(100, 20);
+            this.tbSupCell.TabIndex = 3;
             // 
-            // textBox10
+            // tbSupEmail
             // 
-            this.textBox10.Location = new System.Drawing.Point(526, 15);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 38;
+            this.tbSupEmail.Location = new System.Drawing.Point(74, 82);
+            this.tbSupEmail.Name = "tbSupEmail";
+            this.tbSupEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbSupEmail.TabIndex = 2;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(108, 54);
+            this.label12.Location = new System.Drawing.Point(6, 45);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 36;
@@ -452,59 +470,60 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(108, 22);
+            this.label13.Location = new System.Drawing.Point(6, 16);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 13);
             this.label13.TabIndex = 35;
             this.label13.Text = "Supplier ID:";
             // 
-            // textBox12
+            // tbSupName
             // 
-            this.textBox12.Location = new System.Drawing.Point(238, 51);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 33;
+            this.tbSupName.Location = new System.Drawing.Point(74, 45);
+            this.tbSupName.Name = "tbSupName";
+            this.tbSupName.Size = new System.Drawing.Size(100, 20);
+            this.tbSupName.TabIndex = 1;
             // 
-            // textBox13
+            // tbbSupID
             // 
-            this.textBox13.Location = new System.Drawing.Point(238, 15);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 32;
+            this.tbbSupID.Location = new System.Drawing.Point(74, 13);
+            this.tbbSupID.Name = "tbbSupID";
+            this.tbbSupID.Size = new System.Drawing.Size(100, 20);
+            this.tbbSupID.TabIndex = 0;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(23, 132);
+            this.button7.Location = new System.Drawing.Point(74, 152);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(86, 29);
-            this.button7.TabIndex = 31;
+            this.button7.TabIndex = 4;
             this.button7.Text = "Add";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(154, 133);
+            this.button8.Location = new System.Drawing.Point(58, 150);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(86, 29);
-            this.button8.TabIndex = 30;
+            this.button8.TabIndex = 5;
             this.button8.Text = "Update";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(292, 132);
+            this.button9.Location = new System.Drawing.Point(33, 149);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(86, 30);
-            this.button9.TabIndex = 29;
+            this.button9.TabIndex = 6;
             this.button9.Text = "Delete";
             this.button9.UseVisualStyleBackColor = true;
             // 
             // dataGridSupplier
             // 
             this.dataGridSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSupplier.Location = new System.Drawing.Point(7, 168);
+            this.dataGridSupplier.Location = new System.Drawing.Point(7, 209);
             this.dataGridSupplier.Name = "dataGridSupplier";
-            this.dataGridSupplier.Size = new System.Drawing.Size(665, 224);
+            this.dataGridSupplier.Size = new System.Drawing.Size(665, 183);
             this.dataGridSupplier.TabIndex = 28;
             // 
             // tabPage4
@@ -666,21 +685,139 @@
             this.tabPage6.Text = "Report";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // logoutToolStripMenuItem
+            // errorProvider
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
+            this.errorProvider.ContainerControl = this;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.tbSupCell);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.tbSupEmail);
+            this.groupBox1.Controls.Add(this.tbbSupID);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.tbSupName);
+            this.groupBox1.Location = new System.Drawing.Point(7, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(199, 187);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Location = new System.Drawing.Point(212, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(186, 186);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Update";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button9);
+            this.groupBox3.Location = new System.Drawing.Point(404, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(151, 185);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Delete";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rbCell);
+            this.groupBox4.Controls.Add(this.rbEmail);
+            this.groupBox4.Controls.Add(this.rbName);
+            this.groupBox4.Controls.Add(this.rbID);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Location = new System.Drawing.Point(561, 17);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(100, 185);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Sort";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Sort";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Sort By :";
+            // 
+            // rbID
+            // 
+            this.rbID.AutoSize = true;
+            this.rbID.Location = new System.Drawing.Point(9, 44);
+            this.rbID.Name = "rbID";
+            this.rbID.Size = new System.Drawing.Size(36, 17);
+            this.rbID.TabIndex = 2;
+            this.rbID.TabStop = true;
+            this.rbID.Text = "ID";
+            this.rbID.UseVisualStyleBackColor = true;
+            // 
+            // rbName
+            // 
+            this.rbName.AutoSize = true;
+            this.rbName.Location = new System.Drawing.Point(9, 67);
+            this.rbName.Name = "rbName";
+            this.rbName.Size = new System.Drawing.Size(53, 17);
+            this.rbName.TabIndex = 3;
+            this.rbName.TabStop = true;
+            this.rbName.Text = "Name";
+            this.rbName.UseVisualStyleBackColor = true;
+            // 
+            // rbEmail
+            // 
+            this.rbEmail.AutoSize = true;
+            this.rbEmail.Location = new System.Drawing.Point(9, 90);
+            this.rbEmail.Name = "rbEmail";
+            this.rbEmail.Size = new System.Drawing.Size(50, 17);
+            this.rbEmail.TabIndex = 4;
+            this.rbEmail.TabStop = true;
+            this.rbEmail.Text = "Email";
+            this.rbEmail.UseVisualStyleBackColor = true;
+            // 
+            // rbCell
+            // 
+            this.rbCell.AutoSize = true;
+            this.rbCell.Location = new System.Drawing.Point(9, 113);
+            this.rbCell.Name = "rbCell";
+            this.rbCell.Size = new System.Drawing.Size(42, 17);
+            this.rbCell.TabIndex = 5;
+            this.rbCell.TabStop = true;
+            this.rbCell.Text = "Cell";
+            this.rbCell.UseVisualStyleBackColor = true;
             // 
             // Owner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(699, 480);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Owner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Owner";
             this.Load += new System.EventHandler(this.Owner_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -693,11 +830,17 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSupplier)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,12 +880,12 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbSupCell;
+        private System.Windows.Forms.TextBox tbSupEmail;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox tbSupName;
+        private System.Windows.Forms.TextBox tbbSupID;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
@@ -765,5 +908,16 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton rbCell;
+        private System.Windows.Forms.RadioButton rbEmail;
+        private System.Windows.Forms.RadioButton rbName;
+        private System.Windows.Forms.RadioButton rbID;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
