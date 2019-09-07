@@ -49,7 +49,7 @@ namespace LogInPrototype
         {
             LogIn obj = new LogIn();
             string connectionString;
-            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
             connect = new SqlConnection(connectionString);
             connect.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -67,6 +67,24 @@ namespace LogInPrototype
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tabPageStock_Click(object sender, EventArgs e)
+        {
+            LogIn obj = new LogIn();
+            string connectionString;
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet dataSet = new DataSet();
+            string sqlQuery = "SELECT * FROM Stock";
+            SqlCommand command = new SqlCommand(sqlQuery, connect);
+            adapter.SelectCommand = command;
+            adapter.Fill(dataSet, "stockInfo");
+            dataGridStock.DataSource = dataSet;
+            dataGridStock.DataMember = "stockInfo";
+            //connect.Close();
         }
     }
 }
