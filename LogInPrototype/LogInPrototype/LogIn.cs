@@ -22,12 +22,16 @@ namespace LogInPrototype
            */
             InitializeComponent();
         }
+<<<<<<< HEAD
 
         public void showSplashScreen()
         {
             Application.Run(new SplashScreen());
         }
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
+=======
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security = True";
+>>>>>>> master
         SqlConnection connect;
         SqlDataAdapter adapter;
         SqlCommand command;

@@ -91,6 +91,7 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -102,6 +103,8 @@
             this.rbName = new System.Windows.Forms.RadioButton();
             this.rbEmail = new System.Windows.Forms.RadioButton();
             this.rbCell = new System.Windows.Forms.RadioButton();
+=======
+>>>>>>> master
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageStock.SuspendLayout();
@@ -186,6 +189,7 @@
             this.tabPageStock.TabIndex = 0;
             this.tabPageStock.Text = "Stock";
             this.tabPageStock.UseVisualStyleBackColor = true;
+            this.tabPageStock.Click += new System.EventHandler(this.tabPageStock_Click);
             // 
             // label3
             // 
@@ -685,6 +689,7 @@
             this.tabPage6.Text = "Report";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
@@ -805,6 +810,8 @@
             this.rbCell.Text = "Cell";
             this.rbCell.UseVisualStyleBackColor = true;
             // 
+=======
+>>>>>>> master
             // Owner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

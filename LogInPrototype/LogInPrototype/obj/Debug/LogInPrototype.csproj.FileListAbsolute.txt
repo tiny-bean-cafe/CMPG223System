@@ -52,6 +52,23 @@ C:\Users\Mellison\Documents\CMPG 223\System Project\CMPG223System\LogInPrototype
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData.mdf
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData_log.ldf
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.LogIn.resources
+<<<<<<< HEAD
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.SplashScreen.resources
 C:\Users\Mellison\Documents\CMPG 223\System Project\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.frmHotDrinks.resources
 C:\Users\Mellison\Documents\CMPG 223\System Project\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.SplashScreen.resources
+=======
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData.mdf
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData_log.ldf
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe.config
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.exe
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\LogInPrototype.pdb
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csprojAssemblyReference.cache
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Employee.resources
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.LogIn.resources
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Owner.resources
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.Properties.Resources.resources
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.GenerateResource.cache
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.csproj.CoreCompileInputs.cache
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.exe
+C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.pdb
+>>>>>>> master
