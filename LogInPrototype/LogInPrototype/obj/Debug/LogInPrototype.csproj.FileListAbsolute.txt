@@ -53,3 +53,5 @@ C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223S
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\bin\Debug\TinyBeanData_log.ldf
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.LogIn.resources
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.SplashScreen.resources
+C:\Users\Mellison\Documents\CMPG 223\System Project\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.frmHotDrinks.resources
+C:\Users\Mellison\Documents\CMPG 223\System Project\CMPG223System\LogInPrototype\LogInPrototype\obj\Debug\LogInPrototype.SplashScreen.resources
