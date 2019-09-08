@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Threading;
 
 namespace LogInPrototype
 {
@@ -16,18 +15,17 @@ namespace LogInPrototype
     {
         public LogIn()
         {
-           /* Thread t = new Thread(new ThreadStart(showSplashScreen));
-            t.Start();
-            Thread.Sleep(5000);
-           */
             InitializeComponent();
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         public void showSplashScreen()
         {
             Application.Run(new SplashScreen());
         }
+=======
+>>>>>>> parent of 83dbcfd... I modified the Supplier tab and login form slightly
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
 =======
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security = True";

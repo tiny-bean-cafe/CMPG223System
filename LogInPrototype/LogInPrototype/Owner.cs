@@ -19,48 +19,6 @@ namespace LogInPrototype
         }
 
         SqlConnection connect;
-       string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
-
-        public void loadDatabase()
-        {
-            LogIn obj = new LogIn();
-            connect = new SqlConnection(connectionString);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataSet dataSet = new DataSet();
-            string sqlQuery = "SELECT * FROM Supplier";
-            SqlCommand command = new SqlCommand(sqlQuery, connect);
-            adapter.SelectCommand = command;
-            adapter.Fill(dataSet, "supInfo");
-            dataGridSupplier.DataSource = dataSet;
-            dataGridSupplier.DataMember = "supInfo";
-            connect.Close();
-
-        }
-        
-        public void orderBy(string orderParameter)
-        {
-            LogIn obj = new LogIn();
-            connect = new SqlConnection(connectionString);
-            connect.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataSet dataSet = new DataSet();
-            string sqlQuery = "SELECT * FROM Supplier ORDER BY '"+ orderParameter +"'";
-            SqlCommand command = new SqlCommand(sqlQuery, connect);
-            adapter.SelectCommand = command;
-            adapter.Fill(dataSet, "supInfo");
-            dataGridSupplier.DataSource = dataSet;
-            dataGridSupplier.DataMember = "supInfo";
-            connect.Close();
-        }
-
-        public void clearSupplierTextBoxes()
-        {
-            tbSupName.Clear();
-            tbSupEmail.Clear();
-            tbSupCell.Clear();
-            tbbSupID.Clear();
-        }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -90,11 +48,17 @@ namespace LogInPrototype
         private void Owner_Load(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             loadDatabase();
 =======
             LogIn obj = new LogIn();
             string connectionString;
             connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
+=======
+            LogIn obj = new LogIn();
+            string connectionString;
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\LogInPrototype\LogInPrototype\TinyBeanData.mdf;Integrated Security=True";
+>>>>>>> parent of 83dbcfd... I modified the Supplier tab and login form slightly
             connect = new SqlConnection(connectionString);
             connect.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -106,7 +70,10 @@ namespace LogInPrototype
             dataGridSupplier.DataSource = dataSet;
             dataGridSupplier.DataMember = "supInfo";
             connect.Close();
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> parent of 83dbcfd... I modified the Supplier tab and login form slightly
 
         }
 
@@ -114,6 +81,7 @@ namespace LogInPrototype
         {
             Application.Exit();
         }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         private void Button7_Click(object sender, EventArgs e)
@@ -208,5 +176,7 @@ namespace LogInPrototype
             //connect.Close();
 >>>>>>> master
         }
+=======
+>>>>>>> parent of 83dbcfd... I modified the Supplier tab and login form slightly
     }
 }

@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lstOrderName = new System.Windows.Forms.ListBox();
             this.lstOrderQty = new System.Windows.Forms.ListBox();
             this.lstOrderEach = new System.Windows.Forms.ListBox();
+=======
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rbTab = new System.Windows.Forms.RadioButton();
+            this.rbCash = new System.Windows.Forms.RadioButton();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+>>>>>>> parent of 83dbcfd... I modified the Supplier tab and login form slightly
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalHead = new System.Windows.Forms.Label();
             this.lblEach = new System.Windows.Forms.Label();
@@ -437,14 +457,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(683, 409);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+=======
+            this.ClientSize = new System.Drawing.Size(683, 446);
+            this.Controls.Add(this.tabControl1);
+>>>>>>> parent of 83dbcfd... I modified the Supplier tab and login form slightly
             this.Name = "Employee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.panel1.ResumeLayout(false);
