@@ -44,3 +44,20 @@ C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223S
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.csproj.CoreCompileInputs.cache
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.exe
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.pdb
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\bin\Debug\TinyBeanData.mdf
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\bin\Debug\TinyBeanData_log.ldf
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\bin\Debug\TinyBeanCafeSystem.exe.config
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\bin\Debug\TinyBeanCafeSystem.exe
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\bin\Debug\TinyBeanCafeSystem.pdb
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.csprojAssemblyReference.cache
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmBakedGoods.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmColdDrinks.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmEmployee.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmHotDrinks.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmLogin.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmOwner.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.Properties.Resources.resources
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.csproj.GenerateResource.cache
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.csproj.CoreCompileInputs.cache
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.exe
+C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.pdb
