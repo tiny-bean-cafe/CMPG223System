@@ -16,5 +16,10 @@ namespace TinyBeanCafeSystem
         {
             InitializeComponent();
         }
+
+        private void BtnHotDrinks_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
