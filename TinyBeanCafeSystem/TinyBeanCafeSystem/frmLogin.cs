@@ -16,5 +16,12 @@ namespace TinyBeanCafeSystem
         {
             InitializeComponent();
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            frmEmployee emp = new frmEmployee();
+            emp.ShowDialog();
+            this.Close();
+        }
     }
 }

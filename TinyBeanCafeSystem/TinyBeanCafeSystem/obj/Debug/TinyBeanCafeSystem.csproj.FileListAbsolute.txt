@@ -24,3 +24,6 @@ C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCa
 C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.csproj.CoreCompileInputs.cache
 C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.exe
 C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.pdb
+C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmBakedGoods.resources
+C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmColdDrinks.resources
+C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmHotDrinks.resources

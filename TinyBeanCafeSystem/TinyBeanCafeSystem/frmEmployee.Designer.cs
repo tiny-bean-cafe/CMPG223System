@@ -33,8 +33,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnColdDrinks = new System.Windows.Forms.Button();
-            this.btnHotDrinks = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblBalDue = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,8 +60,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnBakedGoods = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnColdDrinks = new System.Windows.Forms.Button();
+            this.btnBakedGoods = new System.Windows.Forms.Button();
+            this.btnHotDrinks = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +80,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(695, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStripOwner";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -101,33 +102,6 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // btnColdDrinks
-            // 
-            this.btnColdDrinks.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnColdDrinks.BackgroundImage")));
-            this.btnColdDrinks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnColdDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColdDrinks.ForeColor = System.Drawing.Color.White;
-            this.btnColdDrinks.Location = new System.Drawing.Point(24, 221);
-            this.btnColdDrinks.Name = "btnColdDrinks";
-            this.btnColdDrinks.Size = new System.Drawing.Size(263, 78);
-            this.btnColdDrinks.TabIndex = 2;
-            this.btnColdDrinks.Text = "Cold Drinks";
-            this.btnColdDrinks.UseVisualStyleBackColor = true;
-            // 
-            // btnHotDrinks
-            // 
-            this.btnHotDrinks.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHotDrinks.BackgroundImage")));
-            this.btnHotDrinks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHotDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHotDrinks.ForeColor = System.Drawing.Color.White;
-            this.btnHotDrinks.Location = new System.Drawing.Point(24, 28);
-            this.btnHotDrinks.Name = "btnHotDrinks";
-            this.btnHotDrinks.Size = new System.Drawing.Size(263, 78);
-            this.btnHotDrinks.TabIndex = 0;
-            this.btnHotDrinks.Text = "Hot Drinks";
-            this.btnHotDrinks.UseVisualStyleBackColor = true;
-            this.btnHotDrinks.Click += new System.EventHandler(this.BtnHotDrinks_Click);
             // 
             // lblTotal
             // 
@@ -418,19 +392,7 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(311, 376);
             this.pnlMenu.TabIndex = 13;
-            // 
-            // btnBakedGoods
-            // 
-            this.btnBakedGoods.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBakedGoods.BackgroundImage")));
-            this.btnBakedGoods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBakedGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBakedGoods.ForeColor = System.Drawing.Color.White;
-            this.btnBakedGoods.Location = new System.Drawing.Point(24, 119);
-            this.btnBakedGoods.Name = "btnBakedGoods";
-            this.btnBakedGoods.Size = new System.Drawing.Size(263, 96);
-            this.btnBakedGoods.TabIndex = 1;
-            this.btnBakedGoods.Text = "Baked Goods";
-            this.btnBakedGoods.UseVisualStyleBackColor = true;
+            this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlMenu_Paint);
             // 
             // panel1
             // 
@@ -448,6 +410,48 @@
             this.panel1.Size = new System.Drawing.Size(375, 376);
             this.panel1.TabIndex = 10;
             // 
+            // btnColdDrinks
+            // 
+            this.btnColdDrinks.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnColdDrinks.BackgroundImage")));
+            this.btnColdDrinks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnColdDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnColdDrinks.ForeColor = System.Drawing.Color.White;
+            this.btnColdDrinks.Location = new System.Drawing.Point(24, 249);
+            this.btnColdDrinks.Name = "btnColdDrinks";
+            this.btnColdDrinks.Size = new System.Drawing.Size(263, 96);
+            this.btnColdDrinks.TabIndex = 2;
+            this.btnColdDrinks.Text = "Cold Drinks";
+            this.btnColdDrinks.UseVisualStyleBackColor = true;
+            this.btnColdDrinks.Click += new System.EventHandler(this.BtnColdDrinks_Click);
+            // 
+            // btnBakedGoods
+            // 
+            this.btnBakedGoods.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBakedGoods.BackgroundImage")));
+            this.btnBakedGoods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBakedGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBakedGoods.ForeColor = System.Drawing.Color.White;
+            this.btnBakedGoods.Location = new System.Drawing.Point(24, 140);
+            this.btnBakedGoods.Name = "btnBakedGoods";
+            this.btnBakedGoods.Size = new System.Drawing.Size(263, 96);
+            this.btnBakedGoods.TabIndex = 1;
+            this.btnBakedGoods.Text = "Baked Goods";
+            this.btnBakedGoods.UseVisualStyleBackColor = true;
+            this.btnBakedGoods.Click += new System.EventHandler(this.BtnBakedGoods_Click);
+            // 
+            // btnHotDrinks
+            // 
+            this.btnHotDrinks.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHotDrinks.BackgroundImage")));
+            this.btnHotDrinks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHotDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHotDrinks.ForeColor = System.Drawing.Color.White;
+            this.btnHotDrinks.Location = new System.Drawing.Point(24, 28);
+            this.btnHotDrinks.Name = "btnHotDrinks";
+            this.btnHotDrinks.Size = new System.Drawing.Size(263, 96);
+            this.btnHotDrinks.TabIndex = 0;
+            this.btnHotDrinks.Text = "Hot Drinks";
+            this.btnHotDrinks.UseVisualStyleBackColor = true;
+            this.btnHotDrinks.Click += new System.EventHandler(this.BtnHotDrinks_Click);
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +467,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmEmployee";
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.FrmEmployee_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -484,7 +489,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnColdDrinks;
-        private System.Windows.Forms.Button btnHotDrinks;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblBalDue;
         private System.Windows.Forms.Label label6;
@@ -496,13 +500,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.ListBox lstOrderTotal;
-        private System.Windows.Forms.ListBox lstOrderEach;
-        private System.Windows.Forms.ListBox lstOrderQty;
         private System.Windows.Forms.Label lblTotalHead;
         private System.Windows.Forms.Label lblEach;
         private System.Windows.Forms.Label lblQty;
-        private System.Windows.Forms.ListBox lstOrderName;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEmployeeName;
@@ -512,7 +512,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Button btnBakedGoods;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button btnHotDrinks;
+        public System.Windows.Forms.Button btnBakedGoods;
+        public System.Windows.Forms.ListBox lstOrderTotal;
+        public System.Windows.Forms.ListBox lstOrderEach;
+        public System.Windows.Forms.ListBox lstOrderQty;
+        public System.Windows.Forms.ListBox lstOrderName;
     }
 }

@@ -61,11 +61,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBakedGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBakedGoods.Designer.cs">
+      <DependentUpon>frmBakedGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColdDrinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColdDrinks.Designer.cs">
+      <DependentUpon>frmColdDrinks.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmployee.Designer.cs">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHotDrinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHotDrinks.Designer.cs">
+      <DependentUpon>frmHotDrinks.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -81,8 +99,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBakedGoods.resx">
+      <DependentUpon>frmBakedGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColdDrinks.resx">
+      <DependentUpon>frmColdDrinks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHotDrinks.resx">
+      <DependentUpon>frmHotDrinks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
