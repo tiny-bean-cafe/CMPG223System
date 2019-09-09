@@ -156,6 +156,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SideBarsTRans.png" />
     <Content Include="TinyBeanData.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
