@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOwner));
-            this.tbControlOwner = new System.Windows.Forms.TabControl();
+            this.ltbControlOwner = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rbStockQuantity = new System.Windows.Forms.RadioButton();
@@ -40,7 +40,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnDeleteStock = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStockUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateStock = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbStockQuantity = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEmployeeUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateEmployee = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tbEmployeeCell = new System.Windows.Forms.TextBox();
@@ -88,7 +88,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSupplierUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.tbSupplierCell = new System.Windows.Forms.TextBox();
@@ -117,7 +117,7 @@
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCustomerUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.rbCustomerCell = new System.Windows.Forms.RadioButton();
@@ -134,7 +134,36 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbControlOwner.SuspendLayout();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tbUpdateCustomer = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tbUpdateSupplier = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbUpdateStock = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbUpdateEmployee = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBoxStockID = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.comboBoxEmployeeID = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.comboBoxSupplierID = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.comboBoxCustomerID = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBoxDeleteStockID = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBoxDeletEmployeeID = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.comboBoxDeleteSupplierID = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.comboBoxDeleteCustomerID = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.ltbControlOwner.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -164,19 +193,19 @@
             this.menuStripOwner.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbControlOwner
+            // ltbControlOwner
             // 
-            this.tbControlOwner.Controls.Add(this.tabStock);
-            this.tbControlOwner.Controls.Add(this.tabEmployee);
-            this.tbControlOwner.Controls.Add(this.tabSupplier);
-            this.tbControlOwner.Controls.Add(this.tabCustomer);
-            this.tbControlOwner.Controls.Add(this.tabOrder);
-            this.tbControlOwner.Controls.Add(this.tabReport);
-            this.tbControlOwner.Location = new System.Drawing.Point(12, 27);
-            this.tbControlOwner.Name = "tbControlOwner";
-            this.tbControlOwner.SelectedIndex = 0;
-            this.tbControlOwner.Size = new System.Drawing.Size(702, 443);
-            this.tbControlOwner.TabIndex = 0;
+            this.ltbControlOwner.Controls.Add(this.tabStock);
+            this.ltbControlOwner.Controls.Add(this.tabEmployee);
+            this.ltbControlOwner.Controls.Add(this.tabSupplier);
+            this.ltbControlOwner.Controls.Add(this.tabCustomer);
+            this.ltbControlOwner.Controls.Add(this.tabOrder);
+            this.ltbControlOwner.Controls.Add(this.tabReport);
+            this.ltbControlOwner.Location = new System.Drawing.Point(12, 27);
+            this.ltbControlOwner.Name = "ltbControlOwner";
+            this.ltbControlOwner.SelectedIndex = 0;
+            this.ltbControlOwner.Size = new System.Drawing.Size(702, 443);
+            this.ltbControlOwner.TabIndex = 0;
             // 
             // tabStock
             // 
@@ -260,6 +289,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.comboBoxDeleteStockID);
+            this.groupBox3.Controls.Add(this.label34);
             this.groupBox3.Controls.Add(this.btnDeleteStock);
             this.groupBox3.Location = new System.Drawing.Point(396, 7);
             this.groupBox3.Name = "groupBox3";
@@ -279,7 +310,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.comboBoxStockID);
+            this.groupBox2.Controls.Add(this.label27);
+            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.tbUpdateStock);
+            this.groupBox2.Controls.Add(this.comboBoxStockUpdate);
             this.groupBox2.Controls.Add(this.btnUpdateStock);
             this.groupBox2.Location = new System.Drawing.Point(214, 6);
             this.groupBox2.Name = "groupBox2";
@@ -288,13 +324,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update";
             // 
-            // comboBox4
+            // comboBoxStockUpdate
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(7, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(162, 21);
-            this.comboBox4.TabIndex = 2;
+            this.comboBoxStockUpdate.FormattingEnabled = true;
+            this.comboBoxStockUpdate.Items.AddRange(new object[] {
+            "Description",
+            "Quantity"});
+            this.comboBoxStockUpdate.Location = new System.Drawing.Point(7, 96);
+            this.comboBoxStockUpdate.Name = "comboBoxStockUpdate";
+            this.comboBoxStockUpdate.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxStockUpdate.TabIndex = 2;
             // 
             // btnUpdateStock
             // 
@@ -382,7 +421,7 @@
             // dataGridViewStock
             // 
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStock.Location = new System.Drawing.Point(6, 241);
+            this.dataGridViewStock.Location = new System.Drawing.Point(9, 272);
             this.dataGridViewStock.Name = "dataGridViewStock";
             this.dataGridViewStock.Size = new System.Drawing.Size(682, 139);
             this.dataGridViewStock.TabIndex = 0;
@@ -481,6 +520,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.comboBoxDeletEmployeeID);
+            this.groupBox6.Controls.Add(this.label35);
             this.groupBox6.Controls.Add(this.btnDeleteEmployee);
             this.groupBox6.Location = new System.Drawing.Point(413, 7);
             this.groupBox6.Name = "groupBox6";
@@ -500,7 +541,12 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.comboBox2);
+            this.groupBox7.Controls.Add(this.comboBoxEmployeeID);
+            this.groupBox7.Controls.Add(this.label29);
+            this.groupBox7.Controls.Add(this.label28);
+            this.groupBox7.Controls.Add(this.label25);
+            this.groupBox7.Controls.Add(this.tbUpdateEmployee);
+            this.groupBox7.Controls.Add(this.comboBoxEmployeeUpdate);
             this.groupBox7.Controls.Add(this.btnUpdateEmployee);
             this.groupBox7.Location = new System.Drawing.Point(232, 6);
             this.groupBox7.Name = "groupBox7";
@@ -509,13 +555,18 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Update";
             // 
-            // comboBox2
+            // comboBoxEmployeeUpdate
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(7, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(162, 21);
-            this.comboBox2.TabIndex = 2;
+            this.comboBoxEmployeeUpdate.FormattingEnabled = true;
+            this.comboBoxEmployeeUpdate.Items.AddRange(new object[] {
+            "Name",
+            "Surname",
+            "Email",
+            "Cell"});
+            this.comboBoxEmployeeUpdate.Location = new System.Drawing.Point(6, 83);
+            this.comboBoxEmployeeUpdate.Name = "comboBoxEmployeeUpdate";
+            this.comboBoxEmployeeUpdate.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxEmployeeUpdate.TabIndex = 2;
             // 
             // btnUpdateEmployee
             // 
@@ -668,7 +719,7 @@
             this.groupBox9.Controls.Add(this.btnSortSupplier);
             this.groupBox9.Location = new System.Drawing.Point(555, 7);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(133, 179);
+            this.groupBox9.Size = new System.Drawing.Size(133, 192);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Sort";
@@ -728,7 +779,7 @@
             // 
             // btnSortSupplier
             // 
-            this.btnSortSupplier.Location = new System.Drawing.Point(28, 149);
+            this.btnSortSupplier.Location = new System.Drawing.Point(30, 163);
             this.btnSortSupplier.Name = "btnSortSupplier";
             this.btnSortSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnSortSupplier.TabIndex = 1;
@@ -737,17 +788,19 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.comboBoxDeleteSupplierID);
+            this.groupBox10.Controls.Add(this.label36);
             this.groupBox10.Controls.Add(this.btnDeleteSupplier);
             this.groupBox10.Location = new System.Drawing.Point(412, 7);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(137, 179);
+            this.groupBox10.Size = new System.Drawing.Size(137, 192);
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Delete";
             // 
             // btnDeleteSupplier
             // 
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(39, 149);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(40, 163);
             this.btnDeleteSupplier.Name = "btnDeleteSupplier";
             this.btnDeleteSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteSupplier.TabIndex = 1;
@@ -756,26 +809,35 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.comboBox1);
+            this.groupBox11.Controls.Add(this.comboBoxSupplierID);
+            this.groupBox11.Controls.Add(this.label31);
+            this.groupBox11.Controls.Add(this.label30);
+            this.groupBox11.Controls.Add(this.label23);
+            this.groupBox11.Controls.Add(this.tbUpdateSupplier);
+            this.groupBox11.Controls.Add(this.comboBoxSupplierUpdate);
             this.groupBox11.Controls.Add(this.btnUpdateSupplier);
             this.groupBox11.Location = new System.Drawing.Point(231, 6);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(175, 180);
+            this.groupBox11.Size = new System.Drawing.Size(175, 193);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Update";
             // 
-            // comboBox1
+            // comboBoxSupplierUpdate
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxSupplierUpdate.FormattingEnabled = true;
+            this.comboBoxSupplierUpdate.Items.AddRange(new object[] {
+            "Name",
+            "Email",
+            "Cell"});
+            this.comboBoxSupplierUpdate.Location = new System.Drawing.Point(7, 87);
+            this.comboBoxSupplierUpdate.Name = "comboBoxSupplierUpdate";
+            this.comboBoxSupplierUpdate.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxSupplierUpdate.TabIndex = 2;
             // 
             // btnUpdateSupplier
             // 
-            this.btnUpdateSupplier.Location = new System.Drawing.Point(51, 150);
+            this.btnUpdateSupplier.Location = new System.Drawing.Point(63, 164);
             this.btnUpdateSupplier.Name = "btnUpdateSupplier";
             this.btnUpdateSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateSupplier.TabIndex = 1;
@@ -795,7 +857,7 @@
             this.groupBox12.Controls.Add(this.btnAddSupplier);
             this.groupBox12.Location = new System.Drawing.Point(6, 6);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(219, 180);
+            this.groupBox12.Size = new System.Drawing.Size(219, 193);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Add";
@@ -866,7 +928,7 @@
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(88, 150);
+            this.btnAddSupplier.Location = new System.Drawing.Point(88, 164);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnAddSupplier.TabIndex = 4;
@@ -876,7 +938,7 @@
             // dataGridViewSupplier
             // 
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSupplier.Location = new System.Drawing.Point(9, 217);
+            this.dataGridViewSupplier.Location = new System.Drawing.Point(12, 248);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.Size = new System.Drawing.Size(682, 163);
             this.dataGridViewSupplier.TabIndex = 1;
@@ -1007,6 +1069,8 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.comboBoxDeleteCustomerID);
+            this.groupBox14.Controls.Add(this.label37);
             this.groupBox14.Controls.Add(this.btnDeleteCustomer);
             this.groupBox14.Location = new System.Drawing.Point(412, 7);
             this.groupBox14.Name = "groupBox14";
@@ -1026,7 +1090,12 @@
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.comboBox3);
+            this.groupBox15.Controls.Add(this.comboBoxCustomerID);
+            this.groupBox15.Controls.Add(this.label33);
+            this.groupBox15.Controls.Add(this.label32);
+            this.groupBox15.Controls.Add(this.label22);
+            this.groupBox15.Controls.Add(this.tbUpdateCustomer);
+            this.groupBox15.Controls.Add(this.comboBoxCustomerUpdate);
             this.groupBox15.Controls.Add(this.btnUpdateCustomer);
             this.groupBox15.Location = new System.Drawing.Point(231, 6);
             this.groupBox15.Name = "groupBox15";
@@ -1035,13 +1104,18 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Update";
             // 
-            // comboBox3
+            // comboBoxCustomerUpdate
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(7, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(162, 21);
-            this.comboBox3.TabIndex = 2;
+            this.comboBoxCustomerUpdate.FormattingEnabled = true;
+            this.comboBoxCustomerUpdate.Items.AddRange(new object[] {
+            "Name",
+            "Surname",
+            "Email",
+            "Cell"});
+            this.comboBoxCustomerUpdate.Location = new System.Drawing.Point(6, 78);
+            this.comboBoxCustomerUpdate.Name = "comboBoxCustomerUpdate";
+            this.comboBoxCustomerUpdate.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxCustomerUpdate.TabIndex = 2;
             // 
             // btnUpdateCustomer
             // 
@@ -1132,7 +1206,7 @@
             // dataGridViewCustomer
             // 
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(9, 230);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(9, 261);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.Size = new System.Drawing.Size(682, 150);
             this.dataGridViewCustomer.TabIndex = 1;
@@ -1169,7 +1243,8 @@
             // menuStripOwner
             // 
             this.menuStripOwner.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem});
             this.menuStripOwner.Location = new System.Drawing.Point(0, 0);
             this.menuStripOwner.Name = "menuStripOwner";
             this.menuStripOwner.Size = new System.Drawing.Size(726, 24);
@@ -1183,26 +1258,268 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(60, 107);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Update : ";
+            // 
+            // tbUpdateCustomer
+            // 
+            this.tbUpdateCustomer.Location = new System.Drawing.Point(6, 123);
+            this.tbUpdateCustomer.Name = "tbUpdateCustomer";
+            this.tbUpdateCustomer.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateCustomer.TabIndex = 5;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(60, 122);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "Update : ";
+            // 
+            // tbUpdateSupplier
+            // 
+            this.tbUpdateSupplier.Location = new System.Drawing.Point(6, 138);
+            this.tbUpdateSupplier.Name = "tbUpdateSupplier";
+            this.tbUpdateSupplier.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateSupplier.TabIndex = 5;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 133);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 13);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Enter update :";
+            // 
+            // tbUpdateStock
+            // 
+            this.tbUpdateStock.Location = new System.Drawing.Point(6, 149);
+            this.tbUpdateStock.Name = "tbUpdateStock";
+            this.tbUpdateStock.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateStock.TabIndex = 5;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(60, 107);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Update : ";
+            // 
+            // tbUpdateEmployee
+            // 
+            this.tbUpdateEmployee.Location = new System.Drawing.Point(6, 123);
+            this.tbUpdateEmployee.Name = "tbUpdateEmployee";
+            this.tbUpdateEmployee.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateEmployee.TabIndex = 5;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 22);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 13);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Select ID : ";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 80);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(116, 13);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Select field to update : ";
+            // 
+            // comboBoxStockID
+            // 
+            this.comboBoxStockID.FormattingEnabled = true;
+            this.comboBoxStockID.Location = new System.Drawing.Point(6, 39);
+            this.comboBoxStockID.Name = "comboBoxStockID";
+            this.comboBoxStockID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxStockID.TabIndex = 9;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(57, 13);
+            this.label28.TabIndex = 7;
+            this.label28.Text = "Select ID :";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(10, 64);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(116, 13);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Select field to update : ";
+            // 
+            // comboBoxEmployeeID
+            // 
+            this.comboBoxEmployeeID.FormattingEnabled = true;
+            this.comboBoxEmployeeID.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxEmployeeID.Name = "comboBoxEmployeeID";
+            this.comboBoxEmployeeID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxEmployeeID.TabIndex = 9;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 67);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(116, 13);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "Select field to update : ";
+            // 
+            // comboBoxSupplierID
+            // 
+            this.comboBoxSupplierID.FormattingEnabled = true;
+            this.comboBoxSupplierID.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxSupplierID.Name = "comboBoxSupplierID";
+            this.comboBoxSupplierID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxSupplierID.TabIndex = 11;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 16);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(57, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "Select ID :";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 58);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(116, 13);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Select field to update : ";
+            // 
+            // comboBoxCustomerID
+            // 
+            this.comboBoxCustomerID.FormattingEnabled = true;
+            this.comboBoxCustomerID.Location = new System.Drawing.Point(6, 34);
+            this.comboBoxCustomerID.Name = "comboBoxCustomerID";
+            this.comboBoxCustomerID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxCustomerID.TabIndex = 13;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 16);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Select ID :";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
+            // 
+            // comboBoxDeleteStockID
+            // 
+            this.comboBoxDeleteStockID.FormattingEnabled = true;
+            this.comboBoxDeleteStockID.Location = new System.Drawing.Point(6, 38);
+            this.comboBoxDeleteStockID.Name = "comboBoxDeleteStockID";
+            this.comboBoxDeleteStockID.Size = new System.Drawing.Size(141, 21);
+            this.comboBoxDeleteStockID.TabIndex = 11;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(60, 13);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Select ID : ";
+            // 
+            // comboBoxDeletEmployeeID
+            // 
+            this.comboBoxDeletEmployeeID.FormattingEnabled = true;
+            this.comboBoxDeletEmployeeID.Location = new System.Drawing.Point(6, 32);
+            this.comboBoxDeletEmployeeID.Name = "comboBoxDeletEmployeeID";
+            this.comboBoxDeletEmployeeID.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxDeletEmployeeID.TabIndex = 11;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 15);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(60, 13);
+            this.label35.TabIndex = 10;
+            this.label35.Text = "Select ID : ";
+            // 
+            // comboBoxDeleteSupplierID
+            // 
+            this.comboBoxDeleteSupplierID.FormattingEnabled = true;
+            this.comboBoxDeleteSupplierID.Location = new System.Drawing.Point(6, 35);
+            this.comboBoxDeleteSupplierID.Name = "comboBoxDeleteSupplierID";
+            this.comboBoxDeleteSupplierID.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxDeleteSupplierID.TabIndex = 11;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 18);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(60, 13);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Select ID : ";
+            // 
+            // comboBoxDeleteCustomerID
+            // 
+            this.comboBoxDeleteCustomerID.FormattingEnabled = true;
+            this.comboBoxDeleteCustomerID.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxDeleteCustomerID.Name = "comboBoxDeleteCustomerID";
+            this.comboBoxDeleteCustomerID.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxDeleteCustomerID.TabIndex = 11;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 16);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(60, 13);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Select ID : ";
             // 
             // frmOwner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 441);
-            this.Controls.Add(this.tbControlOwner);
+            this.ClientSize = new System.Drawing.Size(726, 460);
+            this.Controls.Add(this.ltbControlOwner);
             this.Controls.Add(this.menuStripOwner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripOwner;
@@ -1210,12 +1527,14 @@
             this.Name = "frmOwner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Owner";
-            this.tbControlOwner.ResumeLayout(false);
+            this.ltbControlOwner.ResumeLayout(false);
             this.tabStock.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
@@ -1223,7 +1542,9 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
@@ -1231,7 +1552,9 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).EndInit();
@@ -1239,7 +1562,9 @@
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
@@ -1254,7 +1579,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tbControlOwner;
+        private System.Windows.Forms.TabControl ltbControlOwner;
         private System.Windows.Forms.TabPage tabStock;
         private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.TabPage tabSupplier;
@@ -1355,9 +1680,38 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxStockUpdate;
+        private System.Windows.Forms.ComboBox comboBoxEmployeeUpdate;
+        private System.Windows.Forms.ComboBox comboBoxSupplierUpdate;
+        private System.Windows.Forms.ComboBox comboBoxCustomerUpdate;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox tbUpdateStock;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox tbUpdateSupplier;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox tbUpdateCustomer;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tbUpdateEmployee;
+        private System.Windows.Forms.ComboBox comboBoxStockID;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox comboBoxEmployeeID;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox comboBoxSupplierID;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox comboBoxCustomerID;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxDeleteStockID;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox comboBoxDeletEmployeeID;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox comboBoxDeleteSupplierID;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.ComboBox comboBoxDeleteCustomerID;
+        private System.Windows.Forms.Label label37;
     }
 }
