@@ -81,5 +81,10 @@ namespace TinyBeanCafeSystem
                 connect.Close();
             }
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

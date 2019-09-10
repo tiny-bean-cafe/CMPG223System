@@ -32,7 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblBalDue = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,10 +59,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnColdDrinks = new System.Windows.Forms.Button();
             this.btnBakedGoods = new System.Windows.Forms.Button();
             this.btnHotDrinks = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.logOutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -94,14 +94,8 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // lblTotal
             // 
@@ -394,22 +388,6 @@
             this.pnlMenu.TabIndex = 13;
             this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlMenu_Paint);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Firebrick;
-            this.panel1.Controls.Add(this.blOrderNum);
-            this.panel1.Controls.Add(this.lstOrderTotal);
-            this.panel1.Controls.Add(this.lstOrderEach);
-            this.panel1.Controls.Add(this.lstOrderQty);
-            this.panel1.Controls.Add(this.lstOrderName);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lblEmployeeName);
-            this.panel1.Location = new System.Drawing.Point(4, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 376);
-            this.panel1.TabIndex = 10;
-            // 
             // btnColdDrinks
             // 
             this.btnColdDrinks.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnColdDrinks.BackgroundImage")));
@@ -452,6 +430,29 @@
             this.btnHotDrinks.UseVisualStyleBackColor = true;
             this.btnHotDrinks.Click += new System.EventHandler(this.BtnHotDrinks_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.blOrderNum);
+            this.panel1.Controls.Add(this.lstOrderTotal);
+            this.panel1.Controls.Add(this.lstOrderEach);
+            this.panel1.Controls.Add(this.lstOrderQty);
+            this.panel1.Controls.Add(this.lstOrderName);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lblEmployeeName);
+            this.panel1.Location = new System.Drawing.Point(4, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(375, 376);
+            this.panel1.TabIndex = 10;
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,7 +488,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnColdDrinks;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblBalDue;
@@ -519,5 +519,6 @@
         public System.Windows.Forms.ListBox lstOrderEach;
         public System.Windows.Forms.ListBox lstOrderQty;
         public System.Windows.Forms.ListBox lstOrderName;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }

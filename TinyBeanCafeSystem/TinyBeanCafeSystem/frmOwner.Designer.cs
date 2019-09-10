@@ -38,8 +38,15 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnSortStock = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDeleteStockID = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.btnDeleteStock = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBoxStockID = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbUpdateStock = new System.Windows.Forms.TextBox();
             this.comboBoxStockUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateStock = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,8 +67,15 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btnSortEmployee = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDeletEmployeeID = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEmployeeID = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbUpdateEmployee = new System.Windows.Forms.TextBox();
             this.comboBoxEmployeeUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateEmployee = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -86,8 +100,15 @@
             this.label20 = new System.Windows.Forms.Label();
             this.btnSortSupplier = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDeleteSupplierID = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.comboBoxSupplierID = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tbUpdateSupplier = new System.Windows.Forms.TextBox();
             this.comboBoxSupplierUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -115,8 +136,15 @@
             this.tbCustomerID = new System.Windows.Forms.TextBox();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDeleteCustomerID = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.comboBoxCustomerID = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tbUpdateCustomer = new System.Windows.Forms.TextBox();
             this.comboBoxCustomerUpdate = new System.Windows.Forms.ComboBox();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
@@ -133,36 +161,8 @@
             this.menuStripOwner = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tbUpdateCustomer = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tbUpdateSupplier = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tbUpdateStock = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tbUpdateEmployee = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.comboBoxStockID = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.comboBoxEmployeeID = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.comboBoxSupplierID = new System.Windows.Forms.ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.comboBoxCustomerID = new System.Windows.Forms.ComboBox();
-            this.label33 = new System.Windows.Forms.Label();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBoxDeleteStockID = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboBoxDeletEmployeeID = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.comboBoxDeleteSupplierID = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.comboBoxDeleteCustomerID = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ltbControlOwner.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -299,6 +299,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete";
             // 
+            // comboBoxDeleteStockID
+            // 
+            this.comboBoxDeleteStockID.FormattingEnabled = true;
+            this.comboBoxDeleteStockID.Location = new System.Drawing.Point(6, 38);
+            this.comboBoxDeleteStockID.Name = "comboBoxDeleteStockID";
+            this.comboBoxDeleteStockID.Size = new System.Drawing.Size(141, 21);
+            this.comboBoxDeleteStockID.TabIndex = 11;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(60, 13);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Select ID : ";
+            // 
             // btnDeleteStock
             // 
             this.btnDeleteStock.Location = new System.Drawing.Point(39, 187);
@@ -323,6 +340,48 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update";
+            // 
+            // comboBoxStockID
+            // 
+            this.comboBoxStockID.FormattingEnabled = true;
+            this.comboBoxStockID.Location = new System.Drawing.Point(6, 39);
+            this.comboBoxStockID.Name = "comboBoxStockID";
+            this.comboBoxStockID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxStockID.TabIndex = 9;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 80);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(116, 13);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Select field to update : ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 22);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 13);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Select ID : ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 133);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 13);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Enter update :";
+            // 
+            // tbUpdateStock
+            // 
+            this.tbUpdateStock.Location = new System.Drawing.Point(6, 149);
+            this.tbUpdateStock.Name = "tbUpdateStock";
+            this.tbUpdateStock.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateStock.TabIndex = 5;
             // 
             // comboBoxStockUpdate
             // 
@@ -530,6 +589,23 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Delete";
             // 
+            // comboBoxDeletEmployeeID
+            // 
+            this.comboBoxDeletEmployeeID.FormattingEnabled = true;
+            this.comboBoxDeletEmployeeID.Location = new System.Drawing.Point(6, 32);
+            this.comboBoxDeletEmployeeID.Name = "comboBoxDeletEmployeeID";
+            this.comboBoxDeletEmployeeID.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxDeletEmployeeID.TabIndex = 11;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 15);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(60, 13);
+            this.label35.TabIndex = 10;
+            this.label35.Text = "Select ID : ";
+            // 
             // btnDeleteEmployee
             // 
             this.btnDeleteEmployee.Location = new System.Drawing.Point(39, 155);
@@ -554,6 +630,48 @@
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Update";
+            // 
+            // comboBoxEmployeeID
+            // 
+            this.comboBoxEmployeeID.FormattingEnabled = true;
+            this.comboBoxEmployeeID.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxEmployeeID.Name = "comboBoxEmployeeID";
+            this.comboBoxEmployeeID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxEmployeeID.TabIndex = 9;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(10, 64);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(116, 13);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Select field to update : ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(57, 13);
+            this.label28.TabIndex = 7;
+            this.label28.Text = "Select ID :";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(60, 107);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Update : ";
+            // 
+            // tbUpdateEmployee
+            // 
+            this.tbUpdateEmployee.Location = new System.Drawing.Point(6, 123);
+            this.tbUpdateEmployee.Name = "tbUpdateEmployee";
+            this.tbUpdateEmployee.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateEmployee.TabIndex = 5;
             // 
             // comboBoxEmployeeUpdate
             // 
@@ -798,6 +916,23 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Delete";
             // 
+            // comboBoxDeleteSupplierID
+            // 
+            this.comboBoxDeleteSupplierID.FormattingEnabled = true;
+            this.comboBoxDeleteSupplierID.Location = new System.Drawing.Point(6, 35);
+            this.comboBoxDeleteSupplierID.Name = "comboBoxDeleteSupplierID";
+            this.comboBoxDeleteSupplierID.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxDeleteSupplierID.TabIndex = 11;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 18);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(60, 13);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Select ID : ";
+            // 
             // btnDeleteSupplier
             // 
             this.btnDeleteSupplier.Location = new System.Drawing.Point(40, 163);
@@ -822,6 +957,48 @@
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Update";
+            // 
+            // comboBoxSupplierID
+            // 
+            this.comboBoxSupplierID.FormattingEnabled = true;
+            this.comboBoxSupplierID.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxSupplierID.Name = "comboBoxSupplierID";
+            this.comboBoxSupplierID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxSupplierID.TabIndex = 11;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 16);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(57, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "Select ID :";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 67);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(116, 13);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "Select field to update : ";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(60, 122);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "Update : ";
+            // 
+            // tbUpdateSupplier
+            // 
+            this.tbUpdateSupplier.Location = new System.Drawing.Point(6, 138);
+            this.tbUpdateSupplier.Name = "tbUpdateSupplier";
+            this.tbUpdateSupplier.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateSupplier.TabIndex = 5;
             // 
             // comboBoxSupplierUpdate
             // 
@@ -1079,6 +1256,23 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Delete";
             // 
+            // comboBoxDeleteCustomerID
+            // 
+            this.comboBoxDeleteCustomerID.FormattingEnabled = true;
+            this.comboBoxDeleteCustomerID.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxDeleteCustomerID.Name = "comboBoxDeleteCustomerID";
+            this.comboBoxDeleteCustomerID.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxDeleteCustomerID.TabIndex = 11;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 16);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(60, 13);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Select ID : ";
+            // 
             // btnDeleteCustomer
             // 
             this.btnDeleteCustomer.Location = new System.Drawing.Point(39, 155);
@@ -1103,6 +1297,48 @@
             this.groupBox15.TabIndex = 1;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Update";
+            // 
+            // comboBoxCustomerID
+            // 
+            this.comboBoxCustomerID.FormattingEnabled = true;
+            this.comboBoxCustomerID.Location = new System.Drawing.Point(6, 34);
+            this.comboBoxCustomerID.Name = "comboBoxCustomerID";
+            this.comboBoxCustomerID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxCustomerID.TabIndex = 13;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 16);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Select ID :";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 58);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(116, 13);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Select field to update : ";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(60, 107);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Update : ";
+            // 
+            // tbUpdateCustomer
+            // 
+            this.tbUpdateCustomer.Location = new System.Drawing.Point(6, 123);
+            this.tbUpdateCustomer.Name = "tbUpdateCustomer";
+            this.tbUpdateCustomer.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateCustomer.TabIndex = 5;
             // 
             // comboBoxCustomerUpdate
             // 
@@ -1255,7 +1491,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.logOutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -1266,253 +1502,18 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(60, 107);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(51, 13);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "Update : ";
-            // 
-            // tbUpdateCustomer
-            // 
-            this.tbUpdateCustomer.Location = new System.Drawing.Point(6, 123);
-            this.tbUpdateCustomer.Name = "tbUpdateCustomer";
-            this.tbUpdateCustomer.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateCustomer.TabIndex = 5;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(60, 122);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "Update : ";
-            // 
-            // tbUpdateSupplier
-            // 
-            this.tbUpdateSupplier.Location = new System.Drawing.Point(6, 138);
-            this.tbUpdateSupplier.Name = "tbUpdateSupplier";
-            this.tbUpdateSupplier.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateSupplier.TabIndex = 5;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 133);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 13);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Enter update :";
-            // 
-            // tbUpdateStock
-            // 
-            this.tbUpdateStock.Location = new System.Drawing.Point(6, 149);
-            this.tbUpdateStock.Name = "tbUpdateStock";
-            this.tbUpdateStock.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateStock.TabIndex = 5;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(60, 107);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 13);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Update : ";
-            // 
-            // tbUpdateEmployee
-            // 
-            this.tbUpdateEmployee.Location = new System.Drawing.Point(6, 123);
-            this.tbUpdateEmployee.Name = "tbUpdateEmployee";
-            this.tbUpdateEmployee.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateEmployee.TabIndex = 5;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 22);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(60, 13);
-            this.label26.TabIndex = 7;
-            this.label26.Text = "Select ID : ";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 80);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(116, 13);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "Select field to update : ";
-            // 
-            // comboBoxStockID
-            // 
-            this.comboBoxStockID.FormattingEnabled = true;
-            this.comboBoxStockID.Location = new System.Drawing.Point(6, 39);
-            this.comboBoxStockID.Name = "comboBoxStockID";
-            this.comboBoxStockID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxStockID.TabIndex = 9;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 16);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(57, 13);
-            this.label28.TabIndex = 7;
-            this.label28.Text = "Select ID :";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(10, 64);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(116, 13);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "Select field to update : ";
-            // 
-            // comboBoxEmployeeID
-            // 
-            this.comboBoxEmployeeID.FormattingEnabled = true;
-            this.comboBoxEmployeeID.Location = new System.Drawing.Point(6, 33);
-            this.comboBoxEmployeeID.Name = "comboBoxEmployeeID";
-            this.comboBoxEmployeeID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxEmployeeID.TabIndex = 9;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 67);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(116, 13);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "Select field to update : ";
-            // 
-            // comboBoxSupplierID
-            // 
-            this.comboBoxSupplierID.FormattingEnabled = true;
-            this.comboBoxSupplierID.Location = new System.Drawing.Point(6, 33);
-            this.comboBoxSupplierID.Name = "comboBoxSupplierID";
-            this.comboBoxSupplierID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxSupplierID.TabIndex = 11;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 16);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(57, 13);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "Select ID :";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 58);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(116, 13);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "Select field to update : ";
-            // 
-            // comboBoxCustomerID
-            // 
-            this.comboBoxCustomerID.FormattingEnabled = true;
-            this.comboBoxCustomerID.Location = new System.Drawing.Point(6, 34);
-            this.comboBoxCustomerID.Name = "comboBoxCustomerID";
-            this.comboBoxCustomerID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxCustomerID.TabIndex = 13;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(3, 16);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(57, 13);
-            this.label33.TabIndex = 12;
-            this.label33.Text = "Select ID :";
-            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // comboBoxDeleteStockID
+            // logOutToolStripMenuItem
             // 
-            this.comboBoxDeleteStockID.FormattingEnabled = true;
-            this.comboBoxDeleteStockID.Location = new System.Drawing.Point(6, 38);
-            this.comboBoxDeleteStockID.Name = "comboBoxDeleteStockID";
-            this.comboBoxDeleteStockID.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxDeleteStockID.TabIndex = 11;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(60, 13);
-            this.label34.TabIndex = 10;
-            this.label34.Text = "Select ID : ";
-            // 
-            // comboBoxDeletEmployeeID
-            // 
-            this.comboBoxDeletEmployeeID.FormattingEnabled = true;
-            this.comboBoxDeletEmployeeID.Location = new System.Drawing.Point(6, 32);
-            this.comboBoxDeletEmployeeID.Name = "comboBoxDeletEmployeeID";
-            this.comboBoxDeletEmployeeID.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxDeletEmployeeID.TabIndex = 11;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 15);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(60, 13);
-            this.label35.TabIndex = 10;
-            this.label35.Text = "Select ID : ";
-            // 
-            // comboBoxDeleteSupplierID
-            // 
-            this.comboBoxDeleteSupplierID.FormattingEnabled = true;
-            this.comboBoxDeleteSupplierID.Location = new System.Drawing.Point(6, 35);
-            this.comboBoxDeleteSupplierID.Name = "comboBoxDeleteSupplierID";
-            this.comboBoxDeleteSupplierID.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxDeleteSupplierID.TabIndex = 11;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 18);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(60, 13);
-            this.label36.TabIndex = 10;
-            this.label36.Text = "Select ID : ";
-            // 
-            // comboBoxDeleteCustomerID
-            // 
-            this.comboBoxDeleteCustomerID.FormattingEnabled = true;
-            this.comboBoxDeleteCustomerID.Location = new System.Drawing.Point(6, 33);
-            this.comboBoxDeleteCustomerID.Name = "comboBoxDeleteCustomerID";
-            this.comboBoxDeleteCustomerID.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxDeleteCustomerID.TabIndex = 11;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(6, 16);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(60, 13);
-            this.label37.TabIndex = 10;
-            this.label37.Text = "Select ID : ";
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // frmOwner
             // 
@@ -1679,7 +1680,6 @@
         private System.Windows.Forms.MenuStrip menuStripOwner;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBoxStockUpdate;
         private System.Windows.Forms.ComboBox comboBoxEmployeeUpdate;
         private System.Windows.Forms.ComboBox comboBoxSupplierUpdate;
@@ -1713,5 +1713,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.ComboBox comboBoxDeleteCustomerID;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
