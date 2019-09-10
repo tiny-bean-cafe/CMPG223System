@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOwner));
             this.ltbControlOwner = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
@@ -52,10 +53,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbStockQuantity = new System.Windows.Forms.TextBox();
             this.tbStockDescription = new System.Windows.Forms.TextBox();
-            this.tbStockID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
             this.tabEmployee = new System.Windows.Forms.TabPage();
@@ -85,10 +84,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tbEmployeeSurname = new System.Windows.Forms.TextBox();
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
-            this.tbEmployeeID = new System.Windows.Forms.TextBox();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.dataGridViewEmployee = new System.Windows.Forms.DataGridView();
             this.tabSupplier = new System.Windows.Forms.TabPage();
@@ -116,10 +113,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tbSupplierEmail = new System.Windows.Forms.TextBox();
             this.tbSupplierName = new System.Windows.Forms.TextBox();
-            this.tbSupplierID = new System.Windows.Forms.TextBox();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
             this.tabCustomer = new System.Windows.Forms.TabPage();
@@ -130,10 +125,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tbCustomerSurname = new System.Windows.Forms.TextBox();
             this.tbCustomerName = new System.Windows.Forms.TextBox();
-            this.tbCustomerID = new System.Windows.Forms.TextBox();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.comboBoxDeleteCustomerID = new System.Windows.Forms.ComboBox();
@@ -161,8 +154,10 @@
             this.menuStripOwner = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            //this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ltbControlOwner.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -191,6 +186,7 @@
             this.tabOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.menuStripOwner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ltbControlOwner
@@ -229,9 +225,9 @@
             this.groupBox4.Controls.Add(this.rbStockID);
             this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Controls.Add(this.btnSortStock);
-            this.groupBox4.Location = new System.Drawing.Point(555, 7);
+            this.groupBox4.Location = new System.Drawing.Point(588, 7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(133, 168);
+            this.groupBox4.Size = new System.Drawing.Size(100, 168);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Sort";
@@ -242,7 +238,7 @@
             this.rbStockQuantity.Location = new System.Drawing.Point(9, 99);
             this.rbStockQuantity.Name = "rbStockQuantity";
             this.rbStockQuantity.Size = new System.Drawing.Size(64, 17);
-            this.rbStockQuantity.TabIndex = 5;
+            this.rbStockQuantity.TabIndex = 2;
             this.rbStockQuantity.TabStop = true;
             this.rbStockQuantity.Text = "Quantity";
             this.rbStockQuantity.UseVisualStyleBackColor = true;
@@ -253,7 +249,7 @@
             this.rbStockDesc.Location = new System.Drawing.Point(9, 75);
             this.rbStockDesc.Name = "rbStockDesc";
             this.rbStockDesc.Size = new System.Drawing.Size(78, 17);
-            this.rbStockDesc.TabIndex = 4;
+            this.rbStockDesc.TabIndex = 1;
             this.rbStockDesc.TabStop = true;
             this.rbStockDesc.Text = "Description";
             this.rbStockDesc.UseVisualStyleBackColor = true;
@@ -264,7 +260,7 @@
             this.rbStockID.Location = new System.Drawing.Point(9, 51);
             this.rbStockID.Name = "rbStockID";
             this.rbStockID.Size = new System.Drawing.Size(36, 17);
-            this.rbStockID.TabIndex = 3;
+            this.rbStockID.TabIndex = 0;
             this.rbStockID.TabStop = true;
             this.rbStockID.Text = "ID";
             this.rbStockID.UseVisualStyleBackColor = true;
@@ -283,18 +279,19 @@
             this.btnSortStock.Location = new System.Drawing.Point(19, 138);
             this.btnSortStock.Name = "btnSortStock";
             this.btnSortStock.Size = new System.Drawing.Size(75, 23);
-            this.btnSortStock.TabIndex = 1;
+            this.btnSortStock.TabIndex = 3;
             this.btnSortStock.Text = "Sort";
             this.btnSortStock.UseVisualStyleBackColor = true;
+            this.btnSortStock.Click += new System.EventHandler(this.BtnSortStock_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBoxDeleteStockID);
             this.groupBox3.Controls.Add(this.label34);
             this.groupBox3.Controls.Add(this.btnDeleteStock);
-            this.groupBox3.Location = new System.Drawing.Point(396, 7);
+            this.groupBox3.Location = new System.Drawing.Point(408, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(153, 216);
+            this.groupBox3.Size = new System.Drawing.Size(174, 216);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete";
@@ -316,6 +313,23 @@
             this.label34.TabIndex = 10;
             this.label34.Text = "Select ID : ";
             // 
+            // comboBoxDeleteStockID
+            // 
+            this.comboBoxDeleteStockID.FormattingEnabled = true;
+            this.comboBoxDeleteStockID.Location = new System.Drawing.Point(9, 38);
+            this.comboBoxDeleteStockID.Name = "comboBoxDeleteStockID";
+            this.comboBoxDeleteStockID.Size = new System.Drawing.Size(141, 21);
+            this.comboBoxDeleteStockID.TabIndex = 0;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(60, 13);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Select ID : ";
+            // 
             // btnDeleteStock
             // 
             this.btnDeleteStock.Location = new System.Drawing.Point(39, 187);
@@ -324,6 +338,7 @@
             this.btnDeleteStock.TabIndex = 1;
             this.btnDeleteStock.Text = "Delete";
             this.btnDeleteStock.UseVisualStyleBackColor = true;
+            this.btnDeleteStock.Click += new System.EventHandler(this.BtnDeleteStock_Click);
             // 
             // groupBox2
             // 
@@ -336,7 +351,7 @@
             this.groupBox2.Controls.Add(this.btnUpdateStock);
             this.groupBox2.Location = new System.Drawing.Point(214, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(175, 217);
+            this.groupBox2.Size = new System.Drawing.Size(188, 217);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update";
@@ -383,6 +398,48 @@
             this.tbUpdateStock.Size = new System.Drawing.Size(162, 20);
             this.tbUpdateStock.TabIndex = 5;
             // 
+            // comboBoxStockID
+            // 
+            this.comboBoxStockID.FormattingEnabled = true;
+            this.comboBoxStockID.Location = new System.Drawing.Point(6, 39);
+            this.comboBoxStockID.Name = "comboBoxStockID";
+            this.comboBoxStockID.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxStockID.TabIndex = 0;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 80);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(116, 13);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Select field to update : ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 22);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 13);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Select ID : ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 133);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 13);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Enter update :";
+            // 
+            // tbUpdateStock
+            // 
+            this.tbUpdateStock.Location = new System.Drawing.Point(6, 149);
+            this.tbUpdateStock.Name = "tbUpdateStock";
+            this.tbUpdateStock.Size = new System.Drawing.Size(162, 20);
+            this.tbUpdateStock.TabIndex = 2;
+            // 
             // comboBoxStockUpdate
             // 
             this.comboBoxStockUpdate.FormattingEnabled = true;
@@ -392,25 +449,24 @@
             this.comboBoxStockUpdate.Location = new System.Drawing.Point(7, 96);
             this.comboBoxStockUpdate.Name = "comboBoxStockUpdate";
             this.comboBoxStockUpdate.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxStockUpdate.TabIndex = 2;
+            this.comboBoxStockUpdate.TabIndex = 1;
             // 
             // btnUpdateStock
             // 
             this.btnUpdateStock.Location = new System.Drawing.Point(49, 188);
             this.btnUpdateStock.Name = "btnUpdateStock";
             this.btnUpdateStock.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateStock.TabIndex = 1;
+            this.btnUpdateStock.TabIndex = 3;
             this.btnUpdateStock.Text = "Update";
             this.btnUpdateStock.UseVisualStyleBackColor = true;
+            this.btnUpdateStock.Click += new System.EventHandler(this.BtnUpdateStock_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbStockQuantity);
             this.groupBox1.Controls.Add(this.tbStockDescription);
-            this.groupBox1.Controls.Add(this.tbStockID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAddStock);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -421,30 +477,23 @@
             // 
             // tbStockQuantity
             // 
-            this.tbStockQuantity.Location = new System.Drawing.Point(71, 149);
+            this.tbStockQuantity.Location = new System.Drawing.Point(71, 114);
             this.tbStockQuantity.Name = "tbStockQuantity";
             this.tbStockQuantity.Size = new System.Drawing.Size(110, 20);
             this.tbStockQuantity.TabIndex = 2;
             // 
             // tbStockDescription
             // 
-            this.tbStockDescription.Location = new System.Drawing.Point(71, 57);
+            this.tbStockDescription.Location = new System.Drawing.Point(71, 22);
             this.tbStockDescription.Multiline = true;
             this.tbStockDescription.Name = "tbStockDescription";
             this.tbStockDescription.Size = new System.Drawing.Size(110, 86);
             this.tbStockDescription.TabIndex = 1;
             // 
-            // tbStockID
-            // 
-            this.tbStockID.Location = new System.Drawing.Point(71, 22);
-            this.tbStockID.Name = "tbStockID";
-            this.tbStockID.Size = new System.Drawing.Size(110, 20);
-            this.tbStockID.TabIndex = 0;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 149);
+            this.label3.Location = new System.Drawing.Point(7, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 3;
@@ -453,20 +502,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 57);
+            this.label2.Location = new System.Drawing.Point(6, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Description : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Stock ID : ";
             // 
             // btnAddStock
             // 
@@ -476,6 +516,7 @@
             this.btnAddStock.TabIndex = 3;
             this.btnAddStock.Text = "Add";
             this.btnAddStock.UseVisualStyleBackColor = true;
+            this.btnAddStock.Click += new System.EventHandler(this.BtnAddStock_Click);
             // 
             // dataGridViewStock
             // 
@@ -703,10 +744,8 @@
             this.groupBox8.Controls.Add(this.label7);
             this.groupBox8.Controls.Add(this.label6);
             this.groupBox8.Controls.Add(this.label5);
-            this.groupBox8.Controls.Add(this.label4);
             this.groupBox8.Controls.Add(this.tbEmployeeSurname);
             this.groupBox8.Controls.Add(this.tbEmployeeName);
-            this.groupBox8.Controls.Add(this.tbEmployeeID);
             this.groupBox8.Controls.Add(this.btnAddEmployee);
             this.groupBox8.Location = new System.Drawing.Point(7, 6);
             this.groupBox8.Name = "groupBox8";
@@ -717,7 +756,7 @@
             // 
             // tbEmployeeCell
             // 
-            this.tbEmployeeCell.Location = new System.Drawing.Point(88, 123);
+            this.tbEmployeeCell.Location = new System.Drawing.Point(88, 105);
             this.tbEmployeeCell.Name = "tbEmployeeCell";
             this.tbEmployeeCell.Size = new System.Drawing.Size(110, 20);
             this.tbEmployeeCell.TabIndex = 4;
@@ -725,7 +764,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 130);
+            this.label16.Location = new System.Drawing.Point(7, 112);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(33, 13);
             this.label16.TabIndex = 12;
@@ -733,7 +772,7 @@
             // 
             // tbEmployeeEmail
             // 
-            this.tbEmployeeEmail.Location = new System.Drawing.Point(88, 97);
+            this.tbEmployeeEmail.Location = new System.Drawing.Point(88, 79);
             this.tbEmployeeEmail.Name = "tbEmployeeEmail";
             this.tbEmployeeEmail.Size = new System.Drawing.Size(110, 20);
             this.tbEmployeeEmail.TabIndex = 3;
@@ -741,7 +780,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 104);
+            this.label7.Location = new System.Drawing.Point(7, 86);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 10;
@@ -750,7 +789,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 74);
+            this.label6.Location = new System.Drawing.Point(6, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 9;
@@ -759,41 +798,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 52);
+            this.label5.Location = new System.Drawing.Point(7, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Name:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Employee ID :";
-            // 
             // tbEmployeeSurname
             // 
-            this.tbEmployeeSurname.Location = new System.Drawing.Point(88, 71);
+            this.tbEmployeeSurname.Location = new System.Drawing.Point(88, 53);
             this.tbEmployeeSurname.Name = "tbEmployeeSurname";
             this.tbEmployeeSurname.Size = new System.Drawing.Size(110, 20);
             this.tbEmployeeSurname.TabIndex = 2;
             // 
             // tbEmployeeName
             // 
-            this.tbEmployeeName.Location = new System.Drawing.Point(88, 45);
+            this.tbEmployeeName.Location = new System.Drawing.Point(88, 27);
             this.tbEmployeeName.Name = "tbEmployeeName";
             this.tbEmployeeName.Size = new System.Drawing.Size(110, 20);
             this.tbEmployeeName.TabIndex = 1;
-            // 
-            // tbEmployeeID
-            // 
-            this.tbEmployeeID.Location = new System.Drawing.Point(88, 19);
-            this.tbEmployeeID.Name = "tbEmployeeID";
-            this.tbEmployeeID.Size = new System.Drawing.Size(110, 20);
-            this.tbEmployeeID.TabIndex = 0;
             // 
             // btnAddEmployee
             // 
@@ -1027,10 +1050,8 @@
             this.groupBox12.Controls.Add(this.label8);
             this.groupBox12.Controls.Add(this.label9);
             this.groupBox12.Controls.Add(this.label10);
-            this.groupBox12.Controls.Add(this.label11);
             this.groupBox12.Controls.Add(this.tbSupplierEmail);
             this.groupBox12.Controls.Add(this.tbSupplierName);
-            this.groupBox12.Controls.Add(this.tbSupplierID);
             this.groupBox12.Controls.Add(this.btnAddSupplier);
             this.groupBox12.Location = new System.Drawing.Point(6, 6);
             this.groupBox12.Name = "groupBox12";
@@ -1041,7 +1062,7 @@
             // 
             // tbSupplierCell
             // 
-            this.tbSupplierCell.Location = new System.Drawing.Point(88, 115);
+            this.tbSupplierCell.Location = new System.Drawing.Point(88, 100);
             this.tbSupplierCell.Name = "tbSupplierCell";
             this.tbSupplierCell.Size = new System.Drawing.Size(110, 20);
             this.tbSupplierCell.TabIndex = 3;
@@ -1049,7 +1070,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 122);
+            this.label8.Location = new System.Drawing.Point(7, 107);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 10;
@@ -1058,7 +1079,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 87);
+            this.label9.Location = new System.Drawing.Point(6, 72);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 9;
@@ -1067,41 +1088,25 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 52);
+            this.label10.Location = new System.Drawing.Point(7, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "Name:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Supplier ID :";
-            // 
             // tbSupplierEmail
             // 
-            this.tbSupplierEmail.Location = new System.Drawing.Point(88, 80);
+            this.tbSupplierEmail.Location = new System.Drawing.Point(88, 65);
             this.tbSupplierEmail.Name = "tbSupplierEmail";
             this.tbSupplierEmail.Size = new System.Drawing.Size(110, 20);
             this.tbSupplierEmail.TabIndex = 2;
             // 
             // tbSupplierName
             // 
-            this.tbSupplierName.Location = new System.Drawing.Point(88, 52);
+            this.tbSupplierName.Location = new System.Drawing.Point(88, 37);
             this.tbSupplierName.Name = "tbSupplierName";
             this.tbSupplierName.Size = new System.Drawing.Size(110, 20);
             this.tbSupplierName.TabIndex = 1;
-            // 
-            // tbSupplierID
-            // 
-            this.tbSupplierID.Location = new System.Drawing.Point(88, 19);
-            this.tbSupplierID.Name = "tbSupplierID";
-            this.tbSupplierID.Size = new System.Drawing.Size(110, 20);
-            this.tbSupplierID.TabIndex = 0;
             // 
             // btnAddSupplier
             // 
@@ -1143,10 +1148,8 @@
             this.groupBox13.Controls.Add(this.label13);
             this.groupBox13.Controls.Add(this.label14);
             this.groupBox13.Controls.Add(this.label15);
-            this.groupBox13.Controls.Add(this.label17);
             this.groupBox13.Controls.Add(this.tbCustomerSurname);
             this.groupBox13.Controls.Add(this.tbCustomerName);
-            this.groupBox13.Controls.Add(this.tbCustomerID);
             this.groupBox13.Controls.Add(this.btnAddCustomer);
             this.groupBox13.Location = new System.Drawing.Point(6, 6);
             this.groupBox13.Name = "groupBox13";
@@ -1157,7 +1160,7 @@
             // 
             // tbCustomerCell
             // 
-            this.tbCustomerCell.Location = new System.Drawing.Point(88, 123);
+            this.tbCustomerCell.Location = new System.Drawing.Point(88, 108);
             this.tbCustomerCell.Name = "tbCustomerCell";
             this.tbCustomerCell.Size = new System.Drawing.Size(110, 20);
             this.tbCustomerCell.TabIndex = 4;
@@ -1165,7 +1168,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 130);
+            this.label12.Location = new System.Drawing.Point(7, 115);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 13);
             this.label12.TabIndex = 12;
@@ -1173,7 +1176,7 @@
             // 
             // tbCustomerEmail
             // 
-            this.tbCustomerEmail.Location = new System.Drawing.Point(88, 97);
+            this.tbCustomerEmail.Location = new System.Drawing.Point(88, 82);
             this.tbCustomerEmail.Name = "tbCustomerEmail";
             this.tbCustomerEmail.Size = new System.Drawing.Size(110, 20);
             this.tbCustomerEmail.TabIndex = 3;
@@ -1181,7 +1184,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 104);
+            this.label13.Location = new System.Drawing.Point(7, 89);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 10;
@@ -1190,7 +1193,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 74);
+            this.label14.Location = new System.Drawing.Point(6, 59);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 9;
@@ -1199,41 +1202,25 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 52);
+            this.label15.Location = new System.Drawing.Point(7, 37);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(38, 13);
             this.label15.TabIndex = 8;
             this.label15.Text = "Name:";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 25);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 13);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "Customer ID :";
-            // 
             // tbCustomerSurname
             // 
-            this.tbCustomerSurname.Location = new System.Drawing.Point(88, 71);
+            this.tbCustomerSurname.Location = new System.Drawing.Point(88, 56);
             this.tbCustomerSurname.Name = "tbCustomerSurname";
             this.tbCustomerSurname.Size = new System.Drawing.Size(110, 20);
             this.tbCustomerSurname.TabIndex = 2;
             // 
             // tbCustomerName
             // 
-            this.tbCustomerName.Location = new System.Drawing.Point(88, 45);
+            this.tbCustomerName.Location = new System.Drawing.Point(88, 30);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(110, 20);
             this.tbCustomerName.TabIndex = 1;
-            // 
-            // tbCustomerID
-            // 
-            this.tbCustomerID.Location = new System.Drawing.Point(88, 19);
-            this.tbCustomerID.Name = "tbCustomerID";
-            this.tbCustomerID.Size = new System.Drawing.Size(110, 20);
-            this.tbCustomerID.TabIndex = 0;
             // 
             // btnAddCustomer
             // 
@@ -1499,8 +1486,14 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // exitToolStripMenuItem
+            // 
+           // this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            //this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            //this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
             // 
@@ -1509,11 +1502,13 @@
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // logOutToolStripMenuItem
+            // errorProvider
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            this.errorProvider.ContainerControl = this;
             // 
             // frmOwner
             // 
@@ -1528,6 +1523,7 @@
             this.Name = "frmOwner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Owner";
+            this.Load += new System.EventHandler(this.FrmOwner_Load);
             this.ltbControlOwner.ResumeLayout(false);
             this.tabStock.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -1573,6 +1569,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
             this.menuStripOwner.ResumeLayout(false);
             this.menuStripOwner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1601,10 +1598,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbStockQuantity;
         private System.Windows.Forms.TextBox tbStockDescription;
-        private System.Windows.Forms.TextBox tbStockID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnSortEmployee;
@@ -1619,10 +1614,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbEmployeeSurname;
         private System.Windows.Forms.TextBox tbEmployeeName;
-        private System.Windows.Forms.TextBox tbEmployeeID;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnSortSupplier;
@@ -1635,10 +1628,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbSupplierEmail;
         private System.Windows.Forms.TextBox tbSupplierName;
-        private System.Windows.Forms.TextBox tbSupplierID;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox tbCustomerCell;
@@ -1647,10 +1638,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox tbCustomerSurname;
         private System.Windows.Forms.TextBox tbCustomerName;
-        private System.Windows.Forms.TextBox tbCustomerID;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Button btnDeleteCustomer;
@@ -1714,5 +1703,6 @@
         private System.Windows.Forms.ComboBox comboBoxDeleteCustomerID;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
