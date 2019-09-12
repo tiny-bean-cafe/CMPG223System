@@ -20,11 +20,16 @@ namespace TinyBeanCafeSystem
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
        // String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         SqlConnection connect;
-        SqlDataAdapter adapter;
         SqlCommand command;
         SqlDataReader dataReader;
-        DataSet dataset;
         String username, password, userPos;
+
+        private void linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRetrivePass retrivePass = new frmRetrivePass();
+            retrivePass.ShowDialog();
+        }
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             connect = new SqlConnection(connectionString);
@@ -49,23 +54,34 @@ namespace TinyBeanCafeSystem
                     lblSearching.Text = "";
                     tbUsername.Text = "";
                     tbPassword.Text = "";
+                    lblSearching.Text = "";
 
                     if (userPos == "O")
                     {
                         frmOwner owner = new frmOwner();
                         owner.ShowDialog();
-                        //this.Close();
                     }
                     else
                     {
                         frmEmployee emp = new frmEmployee();
                         emp.ShowDialog();
-                       // this.Close();
                     }
                 }
                 else
                 {
-                    if (username != tbUsername.Text)
+                    if (tbUsername.Text == "" && tbPassword.Text == "")
+                    {
+                        lblSearching.Text = "Please enter username and password";
+                    }
+                    else if (tbUsername.Text == "")
+                    {
+                        lblSearching.Text = "Please enter username";
+                    }
+                    else if (tbPassword.Text == "")
+                    {
+                        lblSearching.Text = "Please enter password";
+                    }
+                    else if (username != tbUsername.Text)
                     {
                         tbUsername.SelectAll();
                         tbPassword.SelectAll();
@@ -77,6 +93,7 @@ namespace TinyBeanCafeSystem
                         tbPassword.SelectAll();
                         lblSearching.Text = "The username or the password is incorrect";
                     }
+                    
                 }
 
             }

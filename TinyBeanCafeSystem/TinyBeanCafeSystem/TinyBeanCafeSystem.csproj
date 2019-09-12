@@ -98,6 +98,19 @@
     <Compile Include="frmOwner.Designer.cs">
       <DependentUpon>frmOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRetrievePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>frmRetrievePass.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSingup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSingup.Designer.cs">
+      <DependentUpon>frmSingup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBakedGoods.resx">
@@ -117,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOwner.resx">
       <DependentUpon>frmOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRetrievePass.resx">
+      <DependentUpon>frmRetrievePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSingup.resx">
+      <DependentUpon>frmSingup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
