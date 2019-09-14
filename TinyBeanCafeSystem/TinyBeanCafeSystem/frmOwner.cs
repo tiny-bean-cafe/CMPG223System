@@ -24,13 +24,31 @@ namespace TinyBeanCafeSystem
         }
 
         SqlConnection connect;
-        // public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+       // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
 
         SqlDataAdapter adapt; 
         DataSet dataSet; 
         SqlCommand cmd;
+        public void delete(string table, string idField, int ID)
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            string sqlDeleteQuery = "DELETE FROM " + table + " WHERE " + idField + " = '" + ID + "'";
+            cmd = new SqlCommand(sqlDeleteQuery, connect);
+            cmd.ExecuteNonQuery();
+            connect.Close();
+        }
 
+        public void update(string table , string field , string update , string tableIdName , int ID)
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            string updateQuery = @"UPDATE Supplier SET " + field + " = '" + update + "' WHERE " + tableIdName +  " = '" + ID + "'";
+            cmd = new SqlCommand(updateQuery, connect);
+            cmd.ExecuteNonQuery();
+            connect.Close();
+        }
 
         public void loadData(string tableName)
         {
@@ -47,12 +65,66 @@ namespace TinyBeanCafeSystem
             connect.Close();
         }
 
-        /*
-         * I turned the reading of the ID's into a function since it is going to be done
-         * more than once 
-         * I only checked if the first combo box did not have the new ID's and added ID's
-         * to both the combo boxes
-         */
+        public void loadEmployeeTable()
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            adapt = new SqlDataAdapter();
+            dataSet = new DataSet();
+            string sqlQuery = @"SELECT * FROM Employee" ;
+            cmd = new SqlCommand(sqlQuery, connect);
+            adapt.SelectCommand = cmd;
+            adapt.Fill(dataSet, "employeeInfo");
+            dataGridViewEmployee.DataSource = dataSet;
+            dataGridViewEmployee.DataMember = "employeeInfo";
+            connect.Close();
+        }
+
+        public void loadSupplierTable()
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            adapt = new SqlDataAdapter();
+            dataSet = new DataSet();
+            string sqlQuery = @"SELECT * FROM Supplier";
+            cmd = new SqlCommand(sqlQuery, connect);
+            adapt.SelectCommand = cmd;
+            adapt.Fill(dataSet, "supInfo");
+            dataGridViewSupplier.DataSource = dataSet;
+            dataGridViewSupplier.DataMember = "supInfo";
+            connect.Close();
+        }
+        public void loadCustomerTable()
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            adapt = new SqlDataAdapter();
+            dataSet = new DataSet();
+            string sqlQuery = @"SELECT * FROM Customer";
+            cmd = new SqlCommand(sqlQuery, connect);
+            adapt.SelectCommand = cmd;
+            adapt.Fill(dataSet, "cus");
+            dataGridViewCustomer.DataSource = dataSet;
+            dataGridViewCustomer.DataMember = "cus";
+            connect.Close();
+        }
+
+         public void readIDIntoEmployeeComboBoxes()
+        {
+            connect.Open();
+            string readQuery = @"SELECT * FROM Employee";
+            cmd = new SqlCommand(readQuery, connect);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (!comboBoxEmployeeID.Items.Contains(reader.GetValue(0)) || !comboBoxDeletEmployeeID.Items.Contains(reader.GetValue(0)))
+                {
+                    comboBoxEmployeeID.Items.Add(reader.GetValue(0));
+                    comboBoxDeletEmployeeID.Items.Add(reader.GetValue(0));
+                }
+            }
+            connect.Close();
+        }
         public void readIDIntoComboBoxes()
         {
             connect.Open();
@@ -71,6 +143,22 @@ namespace TinyBeanCafeSystem
             connect.Close();
         }
 
+        public void readSupplerIDIntoComboBoxes()
+        {
+            connect.Open();
+            string readQuery = @"SELECT * FROM Supplier";
+            cmd = new SqlCommand(readQuery, connect);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (!comboBoxSupplierID.Items.Contains(reader.GetValue(0)) || !comboBoxDeleteSupplierID.Items.Contains(reader.GetValue(0)))
+                {
+                    comboBoxSupplierID.Items.Add(reader.GetValue(0));
+                    comboBoxDeleteSupplierID.Items.Add(reader.GetValue(0));
+                }
+            }
+            connect.Close();
+        }
 
         private void FrmOwner_Load(object sender, EventArgs e)
         {
@@ -178,7 +266,6 @@ namespace TinyBeanCafeSystem
                         comboBoxStockID.Focus();
                         tbUpdateStock.Clear();
                         comboBoxStockUpdate.Text = "";
-                        
                     }
                     else
                     {
@@ -189,17 +276,6 @@ namespace TinyBeanCafeSystem
             }
             connect.Close();
             
-        }
-
-        public void deleteRow(string table , int ID)
-        {
-            connect = new SqlConnection(connectionString);
-            connect.Open();
-            string sqlDeleteQuery = "DELETE FROM " + table +  " WHERE Stock_ID = '" + ID + "'";
-            cmd = new SqlCommand(sqlDeleteQuery, connect);
-            cmd.ExecuteNonQuery();
-            connect.Close();
-            loadData("Stock");
         }
 
         private void BtnDeleteStock_Click(object sender, EventArgs e)
@@ -214,12 +290,19 @@ namespace TinyBeanCafeSystem
                 else
                 {
                     errorProvider.SetError(comboBoxDeleteStockID, "");
-                    deleteRow("Stock", int.Parse(comboBoxDeleteStockID.Text));
-                    comboBoxDeleteStockID.Items.Clear();
-                    comboBoxStockID.Items.Clear();
-                    readIDIntoComboBoxes();
-                    MessageBox.Show("Deletion Successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    comboBoxDeleteStockID.Text = "";
+                    DialogResult delResult = MessageBox.Show("Are you sure  you want to delete row with ID " + comboBoxDeleteStockID.SelectedItem + " ?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(delResult == DialogResult.Yes)
+                    {
+                        delete("Stock", "Stock_ID", int.Parse(comboBoxDeleteStockID.SelectedItem.ToString()));
+                        loadData("Stock");
+                        comboBoxDeleteStockID.Items.Clear();
+                        comboBoxStockID.Items.Clear();
+                        readIDIntoComboBoxes();
+                        MessageBox.Show("Deletion Successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        comboBoxDeleteStockID.Text = "";
+                        comboBoxDeleteStockID.Focus();
+                    }
+                    errorProvider.SetError(comboBoxDeleteStockID, "");
                     comboBoxDeleteStockID.Focus();
                 }
 
@@ -245,6 +328,33 @@ namespace TinyBeanCafeSystem
             connect.Close();
         }
 
+        public void orderEmployeeBy(string orderBy)
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            string sqlOrder = "SELECT * FROM Employee ORDER BY " + orderBy;
+            cmd = new SqlCommand(sqlOrder, connect);
+            dataSet = new DataSet();
+            adapt.SelectCommand = cmd;
+            adapt.Fill(dataSet, "data");
+            dataGridViewEmployee.DataSource = dataSet;
+            dataGridViewEmployee.DataMember = "data" ;
+            connect.Close();
+        }
+
+       public void orderSupplierBy(string orderBy)
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            string sqlOrder = "SELECT * FROM Supplier ORDER BY " + orderBy;
+            cmd = new SqlCommand(sqlOrder, connect);
+            dataSet = new DataSet();
+            adapt.SelectCommand = cmd;
+            adapt.Fill(dataSet, "data");
+            dataGridViewSupplier.DataSource = dataSet;
+            dataGridViewSupplier.DataMember = "data";
+            connect.Close();
+        }
 
         private void BtnSortStock_Click(object sender, EventArgs e)
         {
@@ -256,6 +366,346 @@ namespace TinyBeanCafeSystem
                 orderStockBy("Stock_Desc");
             else
                 orderStockBy("Stock_ID");
+        }
+
+        private void TabEmployee_Enter(object sender, EventArgs e)
+        {
+            loadEmployeeTable();
+            readIDIntoEmployeeComboBoxes();
+           // MessageBox.Show("henlo world");
+        }
+
+        private void BtnAddEmployee_Click(object sender, EventArgs e)
+        {
+            if(tbEmployeeName.TextLength == 0)
+            {
+                errorProvider.SetError(tbEmployeeName, "Please enter name");
+            }
+            else if(tbEmployeeSurname.TextLength == 0)
+            {
+                errorProvider.SetError(tbEmployeeName, "");
+                errorProvider.SetError(tbEmployeeSurname, "Please enter surname");
+            }
+            else if(tbEmployeeEmail.TextLength == 0)
+            {
+                errorProvider.SetError(tbEmployeeName, "");
+                errorProvider.SetError(tbEmployeeSurname, "");
+                errorProvider.SetError(tbEmployeeEmail, "Please enter email");
+            }
+            else if(tbEmployeeCell.TextLength == 0)
+            {
+                errorProvider.SetError(tbEmployeeName, "");
+                errorProvider.SetError(tbEmployeeSurname, "");
+                errorProvider.SetError(tbEmployeeEmail, "");
+                errorProvider.SetError(tbEmployeeCell, "Please enter cell");
+            }
+            else
+            {
+                connect = new SqlConnection(connectionString);
+                connect.Open();
+                string insertEmployee = @"INSERT INTO Employee VALUES(@name, @surname,@cell,@email)";
+                cmd = new SqlCommand(insertEmployee, connect);
+                cmd.Parameters.AddWithValue("@name", tbEmployeeName.Text);
+                cmd.Parameters.AddWithValue("@surname", tbEmployeeSurname.Text);
+                cmd.Parameters.AddWithValue("@cell", tbEmployeeCell.Text);
+                cmd.Parameters.AddWithValue("@email", tbEmployeeEmail.Text);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    loadEmployeeTable();
+                    MessageBox.Show("Data successfully added !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbEmployeeName.Clear();
+                    tbEmployeeSurname.Clear();
+                    tbEmployeeEmail.Clear();
+                    tbEmployeeCell.Clear();
+                    tbEmployeeName.Focus();
+                    readIDIntoEmployeeComboBoxes();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        private void TabSupplier_Enter(object sender, EventArgs e)
+        {
+            loadSupplierTable();
+            readSupplerIDIntoComboBoxes();
+        }
+
+        private void BtnAddSupplier_Click(object sender, EventArgs e)
+        {
+            if(tbSupplierName.TextLength == 0)
+            {
+                errorProvider.SetError(tbSupplierName, "Please enter Name");
+            }
+            else if(tbSupplierEmail.TextLength == 0)
+            {
+                errorProvider.SetError(tbSupplierName, "");
+                errorProvider.SetError(tbSupplierEmail, "Please enter Email");
+            }
+            else if(tbSupplierCell.TextLength == 0)
+            {
+                errorProvider.SetError(tbSupplierName, "");
+                errorProvider.SetError(tbSupplierEmail, "");
+                errorProvider.SetError(tbSupplierCell, "Please Enter Cell");
+            }
+            else
+            {
+                try
+                {
+                    errorProvider.Clear();
+                    connect = new SqlConnection(connectionString);
+                    connect.Open();
+                    string insertSupplier = @"INSERT INTO Supplier VALUES(@name, @cell, @email)";
+                    cmd = new SqlCommand(insertSupplier, connect);
+                    cmd.Parameters.AddWithValue("@name", tbSupplierName.Text);
+                    cmd.Parameters.AddWithValue("@cell", tbSupplierCell.Text);
+                    cmd.Parameters.AddWithValue("@email", tbSupplierEmail.Text);
+                    
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    loadSupplierTable();
+                    MessageBox.Show("Data added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbSupplierName.Clear();
+                    tbSupplierEmail.Clear();
+                    tbSupplierCell.Clear();
+                    tbSupplierName.Focus();
+                    readSupplerIDIntoComboBoxes();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
+
+            }
+
+        }
+        private void BtnUpdateSupplier_Click(object sender, EventArgs e)
+        {
+            int supplierUpdateID;
+            if(comboBoxSupplierID.SelectedIndex >= 0)
+            {
+                errorProvider.SetError(comboBoxSupplierID, "");
+                if (int.TryParse(comboBoxSupplierID.SelectedItem.ToString(), out supplierUpdateID))
+                {
+                    errorProvider.SetError(comboBoxSupplierID, "");
+                    if (comboBoxSupplierUpdate.SelectedIndex >= 0)
+                    {
+                        errorProvider.SetError(comboBoxSupplierUpdate, "");
+                        if (tbUpdateSupplier.TextLength != 0)
+                        {
+                            errorProvider.SetError(tbUpdateSupplier, "");
+                            try
+                            {
+                                connect = new SqlConnection(connectionString);
+                                connect.Open();
+                                string field = comboBoxSupplierUpdate.SelectedItem.ToString();
+                                string updateQuery = @"UPDATE Supplier SET " + field + " = '" +  tbUpdateSupplier.Text +"' WHERE Sup_ID =  '" + supplierUpdateID +"'";
+                                 cmd = new SqlCommand(updateQuery, connect);
+                                 cmd.ExecuteNonQuery();
+                                 connect.Close();    
+                                //update("Supplier", comboBoxSupplierUpdate.SelectedItem.ToString(), tbUpdateSupplier.ToString(),comboBoxSupplierUpdate.SelectedItem.ToString() , int.Parse(comboBoxSupplierID.SelectedItem.ToString()));
+                                loadSupplierTable();
+                                MessageBox.Show("Update Successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                comboBoxSupplierID.Text = "";
+                                comboBoxSupplierID.Focus();
+                                comboBoxSupplierUpdate.Text = "";
+                                tbUpdateSupplier.Clear();
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            errorProvider.SetError(tbUpdateSupplier, "Invalid Update");
+                        }
+                    }
+                    else
+                    {
+                        errorProvider.SetError(comboBoxSupplierUpdate, "Invalid ID");
+                    }
+                }
+                else
+                {
+                    errorProvider.SetError(comboBoxSupplierID, "Invalid ID");
+                }
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxSupplierID, "Invalid ID");
+            }
+        }
+
+        private void BtnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            int deleteID;
+            if(comboBoxDeleteSupplierID.SelectedIndex >= 0)
+            {
+                if (int.TryParse(comboBoxDeleteSupplierID.Text , out deleteID))
+                {
+                    try
+                    {
+                        DialogResult delResult = MessageBox.Show("Are you sure you want to delete row with ID " + comboBoxDeleteSupplierID.SelectedItem.ToString() + " ?" , "Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if(delResult == DialogResult.Yes)
+                        {
+                            delete("Supplier", "Sup_ID", deleteID);
+                            loadSupplierTable();
+                            readSupplerIDIntoComboBoxes();
+                            MessageBox.Show("Deletion Successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            errorProvider.SetError(comboBoxDeleteSupplierID, "");
+                            comboBoxDeleteSupplierID.Text = "";
+                            comboBoxDeleteSupplierID.Focus();
+                        }
+                        errorProvider.SetError(comboBoxDeleteSupplierID, "");
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    errorProvider.SetError( comboBoxDeleteSupplierID,"Invalid ID");
+                }
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxDeleteSupplierID, "Invalid ID");
+            }
+        }
+
+        private void BtnSortSupplier_Click(object sender, EventArgs e)
+        {
+            if (rbSupplierName.Checked)
+                orderSupplierBy("Sup_Name");
+            if (rbSupplierEmail.Checked)
+                orderSupplierBy("Sup_Email");
+            if (rbSupplierCell.Checked)
+                orderSupplierBy("Sup_Cell");
+            if (rbSupplierID.Checked)
+                orderSupplierBy("Sup_ID");
+        }
+
+        private void BtnUpdateEmployee_Click(object sender, EventArgs e)
+        {
+            int updateID;
+            
+            if(comboBoxEmployeeID.SelectedIndex >= 0)
+            {
+                errorProvider.SetError(comboBoxEmployeeID, "");
+                if(int.TryParse(comboBoxEmployeeID.SelectedItem.ToString() , out updateID))
+                {
+                    errorProvider.SetError(comboBoxEmployeeID, "");
+                    if(comboBoxEmployeeUpdate.SelectedIndex >= 0)
+                    {
+                        errorProvider.SetError(comboBoxEmployeeUpdate, "");
+                        if(tbUpdateEmployee.TextLength != 0)
+                        {
+                            try
+                            {
+                                errorProvider.Clear();
+                                string updateFiled = comboBoxEmployeeUpdate.SelectedItem.ToString();
+                                connect = new SqlConnection(connectionString);
+                                connect.Open();
+                                string field = comboBoxEmployeeUpdate.SelectedItem.ToString();
+                                string updateQuery = @"UPDATE Employee SET " + updateFiled + " = '" + tbUpdateEmployee.Text + "' WHERE Emp_No =  '" + updateID + "'";
+                                cmd = new SqlCommand(updateQuery, connect);
+                                cmd.ExecuteNonQuery();
+                                connect.Close();
+                                loadEmployeeTable();
+                                MessageBox.Show("Update successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                tbUpdateEmployee.Clear();
+                                comboBoxEmployeeID.Focus();
+                                comboBoxEmployeeUpdate.Text = "";
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            errorProvider.SetError(tbUpdateEmployee, "Please enter update");
+                        }
+                    }
+                    else
+                    {
+                        errorProvider.SetError(comboBoxEmployeeUpdate, "Please select field");
+                    }
+                }
+                else
+                {
+                    errorProvider.SetError(comboBoxEmployeeID, "Invalid ID");
+                }
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxEmployeeID, "Please select an ID");
+            }
+        }
+        private void BtnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            int deleteID;
+            if (comboBoxDeletEmployeeID.SelectedIndex >= 0)
+            {
+                if (int.TryParse(comboBoxDeletEmployeeID.Text, out deleteID))
+                {
+                    try
+                    {
+                        DialogResult delResult = MessageBox.Show("Are you sure you want to delete row with ID " + comboBoxDeletEmployeeID.SelectedItem.ToString() + " ?", "Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (delResult == DialogResult.Yes)
+                        {
+                            delete("Employee", "Emp_No", deleteID);
+                            loadEmployeeTable();
+                            readIDIntoEmployeeComboBoxes();
+                            MessageBox.Show("Deletion Successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            errorProvider.SetError(comboBoxDeletEmployeeID, "");
+                            comboBoxDeletEmployeeID.Text = "";
+                            comboBoxDeletEmployeeID.Focus();
+                        }
+                        errorProvider.SetError(comboBoxDeletEmployeeID, "");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    errorProvider.SetError(comboBoxDeletEmployeeID, "Invalid ID");
+                }
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxDeletEmployeeID, "Invalid ID");
+            }
+        }
+        private void BtnSortEmployee_Click(object sender, EventArgs e)
+        {
+            if(rbEmployeeName.Checked)
+                 orderEmployeeBy("Emp_Name");
+            if (rbEmployeeSurname.Checked)
+                orderEmployeeBy("Emp_SName");
+            if (rbEmployeeEmail.Checked)
+                orderEmployeeBy("Emp_Email");
+            if(rbEmployeeID.Checked)
+                orderEmployeeBy("Emp_No");
+        }
+
+        private void TabCustomer_Enter(object sender, EventArgs e)
+        {
+            loadCustomerTable();
+        }
+
+        private void BtnAddCustomer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

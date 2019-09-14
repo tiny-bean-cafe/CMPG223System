@@ -154,9 +154,8 @@
             this.menuStripOwner = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            //this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ltbControlOwner.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -200,7 +199,7 @@
             this.ltbControlOwner.Location = new System.Drawing.Point(12, 27);
             this.ltbControlOwner.Name = "ltbControlOwner";
             this.ltbControlOwner.SelectedIndex = 0;
-            this.ltbControlOwner.Size = new System.Drawing.Size(702, 443);
+            this.ltbControlOwner.Size = new System.Drawing.Size(702, 433);
             this.ltbControlOwner.TabIndex = 0;
             // 
             // tabStock
@@ -213,7 +212,7 @@
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
             this.tabStock.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStock.Size = new System.Drawing.Size(694, 417);
+            this.tabStock.Size = new System.Drawing.Size(694, 407);
             this.tabStock.TabIndex = 0;
             this.tabStock.Text = "Stock";
             this.tabStock.UseVisualStyleBackColor = true;
@@ -239,7 +238,6 @@
             this.rbStockQuantity.Name = "rbStockQuantity";
             this.rbStockQuantity.Size = new System.Drawing.Size(64, 17);
             this.rbStockQuantity.TabIndex = 2;
-            this.rbStockQuantity.TabStop = true;
             this.rbStockQuantity.Text = "Quantity";
             this.rbStockQuantity.UseVisualStyleBackColor = true;
             // 
@@ -250,13 +248,13 @@
             this.rbStockDesc.Name = "rbStockDesc";
             this.rbStockDesc.Size = new System.Drawing.Size(78, 17);
             this.rbStockDesc.TabIndex = 1;
-            this.rbStockDesc.TabStop = true;
             this.rbStockDesc.Text = "Description";
             this.rbStockDesc.UseVisualStyleBackColor = true;
             // 
             // rbStockID
             // 
             this.rbStockID.AutoSize = true;
+            this.rbStockID.Checked = true;
             this.rbStockID.Location = new System.Drawing.Point(9, 51);
             this.rbStockID.Name = "rbStockID";
             this.rbStockID.Size = new System.Drawing.Size(36, 17);
@@ -295,23 +293,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete";
-            // 
-            // comboBoxDeleteStockID
-            // 
-            this.comboBoxDeleteStockID.FormattingEnabled = true;
-            this.comboBoxDeleteStockID.Location = new System.Drawing.Point(6, 38);
-            this.comboBoxDeleteStockID.Name = "comboBoxDeleteStockID";
-            this.comboBoxDeleteStockID.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxDeleteStockID.TabIndex = 11;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(60, 13);
-            this.label34.TabIndex = 10;
-            this.label34.Text = "Select ID : ";
             // 
             // comboBoxDeleteStockID
             // 
@@ -355,48 +336,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update";
-            // 
-            // comboBoxStockID
-            // 
-            this.comboBoxStockID.FormattingEnabled = true;
-            this.comboBoxStockID.Location = new System.Drawing.Point(6, 39);
-            this.comboBoxStockID.Name = "comboBoxStockID";
-            this.comboBoxStockID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxStockID.TabIndex = 9;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 80);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(116, 13);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "Select field to update : ";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 22);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(60, 13);
-            this.label26.TabIndex = 7;
-            this.label26.Text = "Select ID : ";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 133);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 13);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Enter update :";
-            // 
-            // tbUpdateStock
-            // 
-            this.tbUpdateStock.Location = new System.Drawing.Point(6, 149);
-            this.tbUpdateStock.Name = "tbUpdateStock";
-            this.tbUpdateStock.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateStock.TabIndex = 5;
             // 
             // comboBoxStockID
             // 
@@ -520,11 +459,13 @@
             // 
             // dataGridViewStock
             // 
+            this.dataGridViewStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStock.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStock.Location = new System.Drawing.Point(9, 272);
+            this.dataGridViewStock.Location = new System.Drawing.Point(9, 253);
             this.dataGridViewStock.Name = "dataGridViewStock";
-            this.dataGridViewStock.Size = new System.Drawing.Size(682, 139);
-            this.dataGridViewStock.TabIndex = 0;
+            this.dataGridViewStock.Size = new System.Drawing.Size(682, 146);
+            this.dataGridViewStock.TabIndex = 10;
             // 
             // tabEmployee
             // 
@@ -536,10 +477,11 @@
             this.tabEmployee.Location = new System.Drawing.Point(4, 22);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(694, 417);
+            this.tabEmployee.Size = new System.Drawing.Size(694, 407);
             this.tabEmployee.TabIndex = 1;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
+            this.tabEmployee.Enter += new System.EventHandler(this.TabEmployee_Enter);
             // 
             // groupBox5
             // 
@@ -549,9 +491,9 @@
             this.groupBox5.Controls.Add(this.rbEmployeeID);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.btnSortEmployee);
-            this.groupBox5.Location = new System.Drawing.Point(556, 7);
+            this.groupBox5.Location = new System.Drawing.Point(600, 7);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(133, 184);
+            this.groupBox5.Size = new System.Drawing.Size(89, 184);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sort";
@@ -563,7 +505,6 @@
             this.rbEmployeeEmail.Name = "rbEmployeeEmail";
             this.rbEmployeeEmail.Size = new System.Drawing.Size(50, 17);
             this.rbEmployeeEmail.TabIndex = 7;
-            this.rbEmployeeEmail.TabStop = true;
             this.rbEmployeeEmail.Text = "Email";
             this.rbEmployeeEmail.UseVisualStyleBackColor = true;
             // 
@@ -574,7 +515,6 @@
             this.rbEmployeeSurname.Name = "rbEmployeeSurname";
             this.rbEmployeeSurname.Size = new System.Drawing.Size(67, 17);
             this.rbEmployeeSurname.TabIndex = 6;
-            this.rbEmployeeSurname.TabStop = true;
             this.rbEmployeeSurname.Text = "Surname";
             this.rbEmployeeSurname.UseVisualStyleBackColor = true;
             // 
@@ -585,13 +525,13 @@
             this.rbEmployeeName.Name = "rbEmployeeName";
             this.rbEmployeeName.Size = new System.Drawing.Size(53, 17);
             this.rbEmployeeName.TabIndex = 5;
-            this.rbEmployeeName.TabStop = true;
             this.rbEmployeeName.Text = "Name";
             this.rbEmployeeName.UseVisualStyleBackColor = true;
             // 
             // rbEmployeeID
             // 
             this.rbEmployeeID.AutoSize = true;
+            this.rbEmployeeID.Checked = true;
             this.rbEmployeeID.Location = new System.Drawing.Point(9, 32);
             this.rbEmployeeID.Name = "rbEmployeeID";
             this.rbEmployeeID.Size = new System.Drawing.Size(36, 17);
@@ -611,21 +551,22 @@
             // 
             // btnSortEmployee
             // 
-            this.btnSortEmployee.Location = new System.Drawing.Point(32, 155);
+            this.btnSortEmployee.Location = new System.Drawing.Point(8, 155);
             this.btnSortEmployee.Name = "btnSortEmployee";
             this.btnSortEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btnSortEmployee.TabIndex = 1;
+            this.btnSortEmployee.TabIndex = 8;
             this.btnSortEmployee.Text = "Sort";
             this.btnSortEmployee.UseVisualStyleBackColor = true;
+            this.btnSortEmployee.Click += new System.EventHandler(this.BtnSortEmployee_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.comboBoxDeletEmployeeID);
             this.groupBox6.Controls.Add(this.label35);
             this.groupBox6.Controls.Add(this.btnDeleteEmployee);
-            this.groupBox6.Location = new System.Drawing.Point(413, 7);
+            this.groupBox6.Location = new System.Drawing.Point(433, 7);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(137, 184);
+            this.groupBox6.Size = new System.Drawing.Size(152, 184);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Delete";
@@ -636,7 +577,7 @@
             this.comboBoxDeletEmployeeID.Location = new System.Drawing.Point(6, 32);
             this.comboBoxDeletEmployeeID.Name = "comboBoxDeletEmployeeID";
             this.comboBoxDeletEmployeeID.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxDeletEmployeeID.TabIndex = 11;
+            this.comboBoxDeletEmployeeID.TabIndex = 0;
             // 
             // label35
             // 
@@ -655,6 +596,7 @@
             this.btnDeleteEmployee.TabIndex = 1;
             this.btnDeleteEmployee.Text = "Delete";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.BtnDeleteEmployee_Click);
             // 
             // groupBox7
             // 
@@ -667,7 +609,7 @@
             this.groupBox7.Controls.Add(this.btnUpdateEmployee);
             this.groupBox7.Location = new System.Drawing.Point(232, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(175, 185);
+            this.groupBox7.Size = new System.Drawing.Size(195, 185);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Update";
@@ -678,7 +620,7 @@
             this.comboBoxEmployeeID.Location = new System.Drawing.Point(6, 33);
             this.comboBoxEmployeeID.Name = "comboBoxEmployeeID";
             this.comboBoxEmployeeID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxEmployeeID.TabIndex = 9;
+            this.comboBoxEmployeeID.TabIndex = 0;
             // 
             // label29
             // 
@@ -701,40 +643,41 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(60, 107);
+            this.label25.Location = new System.Drawing.Point(10, 107);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.Size = new System.Drawing.Size(77, 13);
             this.label25.TabIndex = 6;
-            this.label25.Text = "Update : ";
+            this.label25.Text = "Enter update : ";
             // 
             // tbUpdateEmployee
             // 
             this.tbUpdateEmployee.Location = new System.Drawing.Point(6, 123);
             this.tbUpdateEmployee.Name = "tbUpdateEmployee";
             this.tbUpdateEmployee.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateEmployee.TabIndex = 5;
+            this.tbUpdateEmployee.TabIndex = 2;
             // 
             // comboBoxEmployeeUpdate
             // 
             this.comboBoxEmployeeUpdate.FormattingEnabled = true;
             this.comboBoxEmployeeUpdate.Items.AddRange(new object[] {
-            "Name",
-            "Surname",
-            "Email",
-            "Cell"});
+            "Emp_Name",
+            "Emp_SName",
+            "Emp_Cell",
+            "Emp_Email"});
             this.comboBoxEmployeeUpdate.Location = new System.Drawing.Point(6, 83);
             this.comboBoxEmployeeUpdate.Name = "comboBoxEmployeeUpdate";
             this.comboBoxEmployeeUpdate.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxEmployeeUpdate.TabIndex = 2;
+            this.comboBoxEmployeeUpdate.TabIndex = 1;
             // 
             // btnUpdateEmployee
             // 
             this.btnUpdateEmployee.Location = new System.Drawing.Point(51, 156);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
             this.btnUpdateEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateEmployee.TabIndex = 1;
+            this.btnUpdateEmployee.TabIndex = 3;
             this.btnUpdateEmployee.Text = "Update";
             this.btnUpdateEmployee.UseVisualStyleBackColor = true;
+            this.btnUpdateEmployee.Click += new System.EventHandler(this.BtnUpdateEmployee_Click);
             // 
             // groupBox8
             // 
@@ -756,15 +699,15 @@
             // 
             // tbEmployeeCell
             // 
-            this.tbEmployeeCell.Location = new System.Drawing.Point(88, 105);
+            this.tbEmployeeCell.Location = new System.Drawing.Point(88, 83);
             this.tbEmployeeCell.Name = "tbEmployeeCell";
             this.tbEmployeeCell.Size = new System.Drawing.Size(110, 20);
-            this.tbEmployeeCell.TabIndex = 4;
+            this.tbEmployeeCell.TabIndex = 3;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 112);
+            this.label16.Location = new System.Drawing.Point(6, 86);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(33, 13);
             this.label16.TabIndex = 12;
@@ -772,15 +715,15 @@
             // 
             // tbEmployeeEmail
             // 
-            this.tbEmployeeEmail.Location = new System.Drawing.Point(88, 79);
+            this.tbEmployeeEmail.Location = new System.Drawing.Point(88, 112);
             this.tbEmployeeEmail.Name = "tbEmployeeEmail";
             this.tbEmployeeEmail.Size = new System.Drawing.Size(110, 20);
-            this.tbEmployeeEmail.TabIndex = 3;
+            this.tbEmployeeEmail.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 86);
+            this.label7.Location = new System.Drawing.Point(6, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 10;
@@ -826,14 +769,17 @@
             this.btnAddEmployee.TabIndex = 5;
             this.btnAddEmployee.Text = "Add";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
             // 
             // dataGridViewEmployee
             // 
+            this.dataGridViewEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmployee.Location = new System.Drawing.Point(9, 239);
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(682, 150);
-            this.dataGridViewEmployee.TabIndex = 1;
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(682, 162);
+            this.dataGridViewEmployee.TabIndex = 10;
             // 
             // tabSupplier
             // 
@@ -845,10 +791,11 @@
             this.tabSupplier.Location = new System.Drawing.Point(4, 22);
             this.tabSupplier.Name = "tabSupplier";
             this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplier.Size = new System.Drawing.Size(694, 417);
+            this.tabSupplier.Size = new System.Drawing.Size(694, 407);
             this.tabSupplier.TabIndex = 2;
             this.tabSupplier.Text = "Supplier";
             this.tabSupplier.UseVisualStyleBackColor = true;
+            this.tabSupplier.Enter += new System.EventHandler(this.TabSupplier_Enter);
             // 
             // groupBox9
             // 
@@ -858,9 +805,9 @@
             this.groupBox9.Controls.Add(this.rbSupplierID);
             this.groupBox9.Controls.Add(this.label20);
             this.groupBox9.Controls.Add(this.btnSortSupplier);
-            this.groupBox9.Location = new System.Drawing.Point(555, 7);
+            this.groupBox9.Location = new System.Drawing.Point(595, 7);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(133, 192);
+            this.groupBox9.Size = new System.Drawing.Size(93, 192);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Sort";
@@ -871,8 +818,7 @@
             this.rbSupplierCell.Location = new System.Drawing.Point(9, 101);
             this.rbSupplierCell.Name = "rbSupplierCell";
             this.rbSupplierCell.Size = new System.Drawing.Size(42, 17);
-            this.rbSupplierCell.TabIndex = 7;
-            this.rbSupplierCell.TabStop = true;
+            this.rbSupplierCell.TabIndex = 3;
             this.rbSupplierCell.Text = "Cell";
             this.rbSupplierCell.UseVisualStyleBackColor = true;
             // 
@@ -882,8 +828,7 @@
             this.rbSupplierEmail.Location = new System.Drawing.Point(9, 78);
             this.rbSupplierEmail.Name = "rbSupplierEmail";
             this.rbSupplierEmail.Size = new System.Drawing.Size(50, 17);
-            this.rbSupplierEmail.TabIndex = 6;
-            this.rbSupplierEmail.TabStop = true;
+            this.rbSupplierEmail.TabIndex = 2;
             this.rbSupplierEmail.Text = "Email";
             this.rbSupplierEmail.UseVisualStyleBackColor = true;
             // 
@@ -893,18 +838,18 @@
             this.rbSupplierName.Location = new System.Drawing.Point(9, 55);
             this.rbSupplierName.Name = "rbSupplierName";
             this.rbSupplierName.Size = new System.Drawing.Size(53, 17);
-            this.rbSupplierName.TabIndex = 5;
-            this.rbSupplierName.TabStop = true;
+            this.rbSupplierName.TabIndex = 1;
             this.rbSupplierName.Text = "Name";
             this.rbSupplierName.UseVisualStyleBackColor = true;
             // 
             // rbSupplierID
             // 
             this.rbSupplierID.AutoSize = true;
+            this.rbSupplierID.Checked = true;
             this.rbSupplierID.Location = new System.Drawing.Point(9, 32);
             this.rbSupplierID.Name = "rbSupplierID";
             this.rbSupplierID.Size = new System.Drawing.Size(36, 17);
-            this.rbSupplierID.TabIndex = 4;
+            this.rbSupplierID.TabIndex = 0;
             this.rbSupplierID.TabStop = true;
             this.rbSupplierID.Text = "ID";
             this.rbSupplierID.UseVisualStyleBackColor = true;
@@ -920,21 +865,22 @@
             // 
             // btnSortSupplier
             // 
-            this.btnSortSupplier.Location = new System.Drawing.Point(30, 163);
+            this.btnSortSupplier.Location = new System.Drawing.Point(9, 163);
             this.btnSortSupplier.Name = "btnSortSupplier";
             this.btnSortSupplier.Size = new System.Drawing.Size(75, 23);
-            this.btnSortSupplier.TabIndex = 1;
+            this.btnSortSupplier.TabIndex = 4;
             this.btnSortSupplier.Text = "Sort";
             this.btnSortSupplier.UseVisualStyleBackColor = true;
+            this.btnSortSupplier.Click += new System.EventHandler(this.BtnSortSupplier_Click);
             // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.comboBoxDeleteSupplierID);
             this.groupBox10.Controls.Add(this.label36);
             this.groupBox10.Controls.Add(this.btnDeleteSupplier);
-            this.groupBox10.Location = new System.Drawing.Point(412, 7);
+            this.groupBox10.Location = new System.Drawing.Point(432, 7);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(137, 192);
+            this.groupBox10.Size = new System.Drawing.Size(157, 192);
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Delete";
@@ -945,12 +891,12 @@
             this.comboBoxDeleteSupplierID.Location = new System.Drawing.Point(6, 35);
             this.comboBoxDeleteSupplierID.Name = "comboBoxDeleteSupplierID";
             this.comboBoxDeleteSupplierID.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxDeleteSupplierID.TabIndex = 11;
+            this.comboBoxDeleteSupplierID.TabIndex = 0;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 18);
+            this.label36.Location = new System.Drawing.Point(18, 19);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(60, 13);
             this.label36.TabIndex = 10;
@@ -958,12 +904,13 @@
             // 
             // btnDeleteSupplier
             // 
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(40, 163);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(44, 163);
             this.btnDeleteSupplier.Name = "btnDeleteSupplier";
             this.btnDeleteSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteSupplier.TabIndex = 1;
             this.btnDeleteSupplier.Text = "Delete";
             this.btnDeleteSupplier.UseVisualStyleBackColor = true;
+            this.btnDeleteSupplier.Click += new System.EventHandler(this.BtnDeleteSupplier_Click);
             // 
             // groupBox11
             // 
@@ -976,7 +923,7 @@
             this.groupBox11.Controls.Add(this.btnUpdateSupplier);
             this.groupBox11.Location = new System.Drawing.Point(231, 6);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(175, 193);
+            this.groupBox11.Size = new System.Drawing.Size(195, 193);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Update";
@@ -987,7 +934,7 @@
             this.comboBoxSupplierID.Location = new System.Drawing.Point(6, 33);
             this.comboBoxSupplierID.Name = "comboBoxSupplierID";
             this.comboBoxSupplierID.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxSupplierID.TabIndex = 11;
+            this.comboBoxSupplierID.TabIndex = 0;
             // 
             // label31
             // 
@@ -1010,39 +957,40 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(60, 122);
+            this.label23.Location = new System.Drawing.Point(6, 122);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.Size = new System.Drawing.Size(77, 13);
             this.label23.TabIndex = 6;
-            this.label23.Text = "Update : ";
+            this.label23.Text = "Enter update : ";
             // 
             // tbUpdateSupplier
             // 
             this.tbUpdateSupplier.Location = new System.Drawing.Point(6, 138);
             this.tbUpdateSupplier.Name = "tbUpdateSupplier";
             this.tbUpdateSupplier.Size = new System.Drawing.Size(162, 20);
-            this.tbUpdateSupplier.TabIndex = 5;
+            this.tbUpdateSupplier.TabIndex = 2;
             // 
             // comboBoxSupplierUpdate
             // 
             this.comboBoxSupplierUpdate.FormattingEnabled = true;
             this.comboBoxSupplierUpdate.Items.AddRange(new object[] {
-            "Name",
-            "Email",
-            "Cell"});
+            "Sup_Name",
+            "Sup_Email",
+            "Sup_Cell"});
             this.comboBoxSupplierUpdate.Location = new System.Drawing.Point(7, 87);
             this.comboBoxSupplierUpdate.Name = "comboBoxSupplierUpdate";
             this.comboBoxSupplierUpdate.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxSupplierUpdate.TabIndex = 2;
+            this.comboBoxSupplierUpdate.TabIndex = 1;
             // 
             // btnUpdateSupplier
             // 
             this.btnUpdateSupplier.Location = new System.Drawing.Point(63, 164);
             this.btnUpdateSupplier.Name = "btnUpdateSupplier";
             this.btnUpdateSupplier.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateSupplier.TabIndex = 1;
+            this.btnUpdateSupplier.TabIndex = 3;
             this.btnUpdateSupplier.Text = "Update";
             this.btnUpdateSupplier.UseVisualStyleBackColor = true;
+            this.btnUpdateSupplier.Click += new System.EventHandler(this.BtnUpdateSupplier_Click);
             // 
             // groupBox12
             // 
@@ -1116,14 +1064,17 @@
             this.btnAddSupplier.TabIndex = 4;
             this.btnAddSupplier.Text = "Add";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
+            this.btnAddSupplier.Click += new System.EventHandler(this.BtnAddSupplier_Click);
             // 
             // dataGridViewSupplier
             // 
+            this.dataGridViewSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSupplier.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSupplier.Location = new System.Drawing.Point(12, 248);
+            this.dataGridViewSupplier.Location = new System.Drawing.Point(9, 224);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
-            this.dataGridViewSupplier.Size = new System.Drawing.Size(682, 163);
-            this.dataGridViewSupplier.TabIndex = 1;
+            this.dataGridViewSupplier.Size = new System.Drawing.Size(682, 175);
+            this.dataGridViewSupplier.TabIndex = 10;
             // 
             // tabCustomer
             // 
@@ -1135,10 +1086,11 @@
             this.tabCustomer.Location = new System.Drawing.Point(4, 22);
             this.tabCustomer.Name = "tabCustomer";
             this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomer.Size = new System.Drawing.Size(694, 417);
+            this.tabCustomer.Size = new System.Drawing.Size(694, 407);
             this.tabCustomer.TabIndex = 3;
             this.tabCustomer.Text = "Customer";
             this.tabCustomer.UseVisualStyleBackColor = true;
+            this.tabCustomer.Enter += new System.EventHandler(this.TabCustomer_Enter);
             // 
             // groupBox13
             // 
@@ -1230,15 +1182,16 @@
             this.btnAddCustomer.TabIndex = 5;
             this.btnAddCustomer.Text = "Add";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.BtnAddCustomer_Click);
             // 
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.comboBoxDeleteCustomerID);
             this.groupBox14.Controls.Add(this.label37);
             this.groupBox14.Controls.Add(this.btnDeleteCustomer);
-            this.groupBox14.Location = new System.Drawing.Point(412, 7);
+            this.groupBox14.Location = new System.Drawing.Point(429, 7);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(137, 184);
+            this.groupBox14.Size = new System.Drawing.Size(159, 184);
             this.groupBox14.TabIndex = 2;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Delete";
@@ -1280,7 +1233,7 @@
             this.groupBox15.Controls.Add(this.btnUpdateCustomer);
             this.groupBox15.Location = new System.Drawing.Point(231, 6);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(175, 185);
+            this.groupBox15.Size = new System.Drawing.Size(192, 185);
             this.groupBox15.TabIndex = 1;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Update";
@@ -1314,11 +1267,11 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(60, 107);
+            this.label22.Location = new System.Drawing.Point(6, 106);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(51, 13);
+            this.label22.Size = new System.Drawing.Size(77, 13);
             this.label22.TabIndex = 6;
-            this.label22.Text = "Update : ";
+            this.label22.Text = "Enter update : ";
             // 
             // tbUpdateCustomer
             // 
@@ -1357,9 +1310,9 @@
             this.groupBox16.Controls.Add(this.rbCustomerID);
             this.groupBox16.Controls.Add(this.label21);
             this.groupBox16.Controls.Add(this.btnSortCustomer);
-            this.groupBox16.Location = new System.Drawing.Point(555, 7);
+            this.groupBox16.Location = new System.Drawing.Point(594, 7);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(133, 184);
+            this.groupBox16.Size = new System.Drawing.Size(94, 184);
             this.groupBox16.TabIndex = 3;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Sort";
@@ -1428,10 +1381,12 @@
             // 
             // dataGridViewCustomer
             // 
+            this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(9, 261);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(9, 213);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(682, 150);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(682, 186);
             this.dataGridViewCustomer.TabIndex = 1;
             // 
             // tabOrder
@@ -1440,7 +1395,7 @@
             this.tabOrder.Location = new System.Drawing.Point(4, 22);
             this.tabOrder.Name = "tabOrder";
             this.tabOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOrder.Size = new System.Drawing.Size(694, 417);
+            this.tabOrder.Size = new System.Drawing.Size(694, 407);
             this.tabOrder.TabIndex = 4;
             this.tabOrder.Text = "Order";
             this.tabOrder.UseVisualStyleBackColor = true;
@@ -1458,7 +1413,7 @@
             this.tabReport.Location = new System.Drawing.Point(4, 22);
             this.tabReport.Name = "tabReport";
             this.tabReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReport.Size = new System.Drawing.Size(694, 417);
+            this.tabReport.Size = new System.Drawing.Size(694, 407);
             this.tabReport.TabIndex = 5;
             this.tabReport.Text = "Report";
             this.tabReport.UseVisualStyleBackColor = true;
@@ -1486,14 +1441,15 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
-            // exitToolStripMenuItem
+            // logOutToolStripMenuItem
             // 
-           // this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            //this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            //this.exitToolStripMenuItem.Text = "Exit";
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -1501,13 +1457,8 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // logOutToolStripMenuItem
             // errorProvider
             // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOutToolStripMenuItem.Text = "Log out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             this.errorProvider.ContainerControl = this;
             // 
             // frmOwner
