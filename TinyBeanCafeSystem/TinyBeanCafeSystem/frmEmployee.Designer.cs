@@ -64,8 +64,6 @@
             this.btnBakedGoods = new System.Windows.Forms.Button();
             this.btnHotDrinks = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnComplete = new System.Windows.Forms.Button();
-            this.btnRestart = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,7 +77,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(697, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(695, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStripOwner";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
@@ -396,7 +394,7 @@
             this.pnlMenu.Controls.Add(this.btnHotDrinks);
             this.pnlMenu.Location = new System.Drawing.Point(377, 57);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(311, 393);
+            this.pnlMenu.Size = new System.Drawing.Size(311, 376);
             this.pnlMenu.TabIndex = 13;
             this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlMenu_Paint);
             // 
@@ -406,9 +404,9 @@
             this.btnColdDrinks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnColdDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColdDrinks.ForeColor = System.Drawing.Color.White;
-            this.btnColdDrinks.Location = new System.Drawing.Point(24, 272);
+            this.btnColdDrinks.Location = new System.Drawing.Point(24, 249);
             this.btnColdDrinks.Name = "btnColdDrinks";
-            this.btnColdDrinks.Size = new System.Drawing.Size(263, 108);
+            this.btnColdDrinks.Size = new System.Drawing.Size(263, 96);
             this.btnColdDrinks.TabIndex = 2;
             this.btnColdDrinks.Text = "Cold Drinks";
             this.btnColdDrinks.UseVisualStyleBackColor = true;
@@ -420,9 +418,9 @@
             this.btnBakedGoods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBakedGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBakedGoods.ForeColor = System.Drawing.Color.White;
-            this.btnBakedGoods.Location = new System.Drawing.Point(24, 151);
+            this.btnBakedGoods.Location = new System.Drawing.Point(24, 140);
             this.btnBakedGoods.Name = "btnBakedGoods";
-            this.btnBakedGoods.Size = new System.Drawing.Size(263, 108);
+            this.btnBakedGoods.Size = new System.Drawing.Size(263, 96);
             this.btnBakedGoods.TabIndex = 1;
             this.btnBakedGoods.Text = "Baked Goods";
             this.btnBakedGoods.UseVisualStyleBackColor = true;
@@ -436,7 +434,7 @@
             this.btnHotDrinks.ForeColor = System.Drawing.Color.White;
             this.btnHotDrinks.Location = new System.Drawing.Point(24, 28);
             this.btnHotDrinks.Name = "btnHotDrinks";
-            this.btnHotDrinks.Size = new System.Drawing.Size(263, 108);
+            this.btnHotDrinks.Size = new System.Drawing.Size(263, 96);
             this.btnHotDrinks.TabIndex = 0;
             this.btnHotDrinks.Text = "Hot Drinks";
             this.btnHotDrinks.UseVisualStyleBackColor = true;
@@ -445,8 +443,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
-            this.panel1.Controls.Add(this.btnRestart);
-            this.panel1.Controls.Add(this.btnComplete);
             this.panel1.Controls.Add(this.blOrderNum);
             this.panel1.Controls.Add(this.lstOrderTotal);
             this.panel1.Controls.Add(this.lstOrderEach);
@@ -457,32 +453,14 @@
             this.panel1.Controls.Add(this.lblEmployeeName);
             this.panel1.Location = new System.Drawing.Point(4, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 393);
+            this.panel1.Size = new System.Drawing.Size(375, 376);
             this.panel1.TabIndex = 10;
-            // 
-            // btnComplete
-            // 
-            this.btnComplete.Location = new System.Drawing.Point(195, 341);
-            this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(172, 40);
-            this.btnComplete.TabIndex = 23;
-            this.btnComplete.Text = "Complete Order";
-            this.btnComplete.UseVisualStyleBackColor = true;
-            // 
-            // btnRestart
-            // 
-            this.btnRestart.Location = new System.Drawing.Point(12, 341);
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(172, 40);
-            this.btnRestart.TabIndex = 24;
-            this.btnRestart.Text = "Restart";
-            this.btnRestart.UseVisualStyleBackColor = true;
             // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 462);
+            this.ClientSize = new System.Drawing.Size(695, 440);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.btnTab);
@@ -545,7 +523,5 @@
         public System.Windows.Forms.ListBox lstOrderQty;
         public System.Windows.Forms.ListBox lstOrderName;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
-        private System.Windows.Forms.Button btnRestart;
-        private System.Windows.Forms.Button btnComplete;
     }
 }

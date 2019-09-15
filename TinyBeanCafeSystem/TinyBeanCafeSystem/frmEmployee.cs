@@ -18,8 +18,6 @@ namespace TinyBeanCafeSystem
             InitializeComponent();
         }
 
-        public List<string> productName = new List<string>(); 
-
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         
         SqlConnection connect;
@@ -32,7 +30,7 @@ namespace TinyBeanCafeSystem
         {
             frmHotDrinks hotDrinks = new frmHotDrinks();
             hotDrinks.ShowDialog();
-            this.Visible = false;
+            this.Close();
         }
 
         private void BtnColdDrinks_Click(object sender, EventArgs e)
@@ -61,18 +59,12 @@ namespace TinyBeanCafeSystem
 
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
-            foreach (string item in productName)
-            {
-                lstOrderName.Items.Add(item);
-            }
-
             if (lstOrderName.Items.Count > 0)
             {
-                int length = int.Parse(lstOrderName.Items.Count.ToString()) - 1;
+                int length = lstOrderName.Items.Count - 1;
                 int count = 0;
                 double subTotal = 0;
                 double total = 0;
-                
                 for (int j = 0; j <= length; j++)
                 {
                     connect = new SqlConnection(connectionString);
@@ -80,21 +72,22 @@ namespace TinyBeanCafeSystem
                     string sql = @"SELECT * FROM Product";
                     command = new SqlCommand(sql, connect);
                     dataReader = command.ExecuteReader();
-                    string item = lstOrderName.Items[count].ToString();
+                    
                     while (dataReader.Read())
                     {
+
+                        string item = lstOrderName.Items[0].ToString();
                         if (item == dataReader.GetValue(1).ToString())
                         {
                             lstOrderEach.Items.Add(dataReader.GetValue(3).ToString());
-                            total = double.Parse(lstOrderEach.Items[count].ToString()) * double.Parse(lstOrderQty.Items[count].ToString());
-                            lstOrderTotal.Items.Add(Math.Round(total, 2).ToString());
-                            subTotal += total;
                             count++;
                         }
                     
                     }
                     connect.Close();
-                    
+                    total = double.Parse(lstOrderEach.Items[0].ToString()) * double.Parse(lstOrderQty.Items[0].ToString());
+                    lstOrderTotal.Items.Add(Math.Round(total, 2).ToString());
+                    subTotal += total;
                 }
 
                 //Determining Prices
