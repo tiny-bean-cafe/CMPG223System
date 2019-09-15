@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblBalDue = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.btnBakedGoods = new System.Windows.Forms.Button();
             this.btnHotDrinks = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,23 +94,29 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // lblTotal
             // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(278, 10);
+            this.lblTotal.Location = new System.Drawing.Point(277, 10);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(69, 25);
             this.lblTotal.TabIndex = 19;
             this.lblTotal.Text = "R0.00";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblBalDue
             // 
-            this.lblBalDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBalDue.AutoSize = true;
             this.lblBalDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalDue.ForeColor = System.Drawing.Color.Red;
@@ -119,12 +125,13 @@
             this.lblBalDue.Size = new System.Drawing.Size(93, 25);
             this.lblBalDue.TabIndex = 18;
             this.lblBalDue.Text = "R000.00";
+            this.lblBalDue.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(153, 17);
+            this.label6.Location = new System.Drawing.Point(193, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 16);
             this.label6.TabIndex = 13;
@@ -135,11 +142,12 @@
             this.lblTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTax.AutoSize = true;
             this.lblTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTax.Location = new System.Drawing.Point(95, 65);
+            this.lblTax.Location = new System.Drawing.Point(95, 37);
             this.lblTax.Name = "lblTax";
             this.lblTax.Size = new System.Drawing.Size(52, 20);
             this.lblTax.TabIndex = 16;
             this.lblTax.Text = "R0.00";
+            this.lblTax.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label7
             // 
@@ -196,11 +204,12 @@
             this.lblSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(95, 37);
+            this.lblSubTotal.Location = new System.Drawing.Point(95, 64);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(52, 20);
             this.lblSubTotal.TabIndex = 17;
             this.lblSubTotal.Text = "R0.00";
+            this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblDiscount
             // 
@@ -212,6 +221,7 @@
             this.lblDiscount.Size = new System.Drawing.Size(52, 20);
             this.lblDiscount.TabIndex = 15;
             this.lblDiscount.Text = "R0.00";
+            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lstOrderTotal
             // 
@@ -445,13 +455,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 376);
             this.panel1.TabIndex = 10;
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOutToolStripMenuItem.Text = "Log out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // frmEmployee
             // 

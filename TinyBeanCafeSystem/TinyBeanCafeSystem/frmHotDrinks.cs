@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TinyBeanCafeSystem
 {
@@ -14,6 +15,14 @@ namespace TinyBeanCafeSystem
     {
         string items;
         frmEmployee emp = new frmEmployee();
+
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+
+        SqlConnection connect;
+        SqlDataAdapter adapter;
+        SqlCommand command;
+        SqlDataReader dataReader;
+        DataSet dataset;
         public frmHotDrinks()
         {
             InitializeComponent();
@@ -47,6 +56,24 @@ namespace TinyBeanCafeSystem
                 lstHotDrinks.Items.RemoveAt(index);
             }*/
             
+        }
+
+        private void FrmHotDrinks_Load(object sender, EventArgs e)
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            string sql = @"SELECT * FROM Product";
+            command = new SqlCommand(sql, connect);
+            dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                if (dataReader.GetValue(2).ToString() == "Hot Drink")
+                {
+                    cmdHotDrinks.Items.Add(dataReader.GetValue(1).ToString());
+                }
+            }
+            connect.Close();
         }
     }
 }

@@ -18,8 +18,8 @@ namespace TinyBeanCafeSystem
             InitializeComponent();
         }
 
-        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        
         SqlConnection connect;
         SqlDataAdapter adapter;
         SqlCommand command;
@@ -37,12 +37,14 @@ namespace TinyBeanCafeSystem
         {
             frmColdDrinks coldDrinks = new frmColdDrinks();
             coldDrinks.ShowDialog();
+            this.Close();
         }
 
         private void BtnBakedGoods_Click(object sender, EventArgs e)
         {
             frmBakedGoods bakedGoods = new frmBakedGoods();
             bakedGoods.ShowDialog();
+            this.Close();
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -59,26 +61,47 @@ namespace TinyBeanCafeSystem
         {
             if (lstOrderName.Items.Count > 0)
             {
-                connect = new SqlConnection(connectionString);
-                connect.Open();
-                string sql = @"SELECT * FROM Product";
-                command = new SqlCommand(sql, connect);
-                dataReader = command.ExecuteReader();
+                int length = lstOrderName.Items.Count - 1;
                 int count = 0;
-                int length = lstOrderName.Items.Count;
-                while (dataReader.Read())
+                double subTotal = 0;
+                double total = 0;
+                for (int j = 0; j <= length; j++)
                 {
-                    for (int j = 0; j <= length; j++)
+                    connect = new SqlConnection(connectionString);
+                    connect.Open();
+                    string sql = @"SELECT * FROM Product";
+                    command = new SqlCommand(sql, connect);
+                    dataReader = command.ExecuteReader();
+                    
+                    while (dataReader.Read())
                     {
+
                         string item = lstOrderName.Items[0].ToString();
                         if (item == dataReader.GetValue(1).ToString())
                         {
                             lstOrderEach.Items.Add(dataReader.GetValue(3).ToString());
                             count++;
                         }
+                    
                     }
+                    connect.Close();
+                    total = double.Parse(lstOrderEach.Items[0].ToString()) * double.Parse(lstOrderQty.Items[0].ToString());
+                    lstOrderTotal.Items.Add(Math.Round(total, 2).ToString());
+                    subTotal += total;
                 }
-                connect.Close();
+
+                //Determining Prices
+                double tax = 0;
+                double discount = 0; 
+                double balDue = 0;
+                tax = subTotal * 0.15;
+                total = subTotal + tax;
+                balDue = total - discount;
+                lblTax.Text = tax.ToString("c");
+                lblTotal.Text = total.ToString("c");
+                lblSubTotal.Text = subTotal.ToString("c");
+                //lblDiscount = discount.ToString("c");
+                lblBalDue.Text = balDue.ToString("c");
             }
         }
 

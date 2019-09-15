@@ -79,10 +79,6 @@
             // cmdHotDrinks
             // 
             this.cmdHotDrinks.FormattingEnabled = true;
-            this.cmdHotDrinks.Items.AddRange(new object[] {
-            "Hot Chocolate",
-            "Cappuccino",
-            "Flat White"});
             this.cmdHotDrinks.Location = new System.Drawing.Point(21, 22);
             this.cmdHotDrinks.Name = "cmdHotDrinks";
             this.cmdHotDrinks.Size = new System.Drawing.Size(139, 21);
@@ -128,6 +124,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmHotDrinks";
             this.Text = "frmHotDrinks";
+            this.Load += new System.EventHandler(this.FrmHotDrinks_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -99,3 +99,5 @@ C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\
 C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmSingup.resources
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmRetrivePass.resources
 C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmSingup.resources
+C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmRetrivePass.resources
+C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmSingup.resources

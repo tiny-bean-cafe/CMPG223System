@@ -35,6 +35,8 @@
             this.cmdColdDrinks = new System.Windows.Forms.ComboBox();
             this.lstColdDrinks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lstQty = new System.Windows.Forms.ListBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDone
@@ -79,10 +81,6 @@
             // cmdColdDrinks
             // 
             this.cmdColdDrinks.FormattingEnabled = true;
-            this.cmdColdDrinks.Items.AddRange(new object[] {
-            "Hot Chocolate",
-            "Cappuccino",
-            "Flat White"});
             this.cmdColdDrinks.Location = new System.Drawing.Point(21, 22);
             this.cmdColdDrinks.Name = "cmdColdDrinks";
             this.cmdColdDrinks.Size = new System.Drawing.Size(139, 21);
@@ -94,18 +92,27 @@
             this.lstColdDrinks.FormattingEnabled = true;
             this.lstColdDrinks.Location = new System.Drawing.Point(166, 21);
             this.lstColdDrinks.Name = "lstColdDrinks";
-            this.lstColdDrinks.Size = new System.Drawing.Size(136, 121);
+            this.lstColdDrinks.Size = new System.Drawing.Size(114, 121);
             this.lstColdDrinks.TabIndex = 7;
             this.lstColdDrinks.SelectedIndexChanged += new System.EventHandler(this.LstColdDrinks_SelectedIndexChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.lstQty);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(302, 139);
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // lstQty
+            // 
+            this.lstQty.FormattingEnabled = true;
+            this.lstQty.Location = new System.Drawing.Point(267, 9);
+            this.lstQty.Name = "lstQty";
+            this.lstQty.Size = new System.Drawing.Size(32, 121);
+            this.lstQty.TabIndex = 0;
             // 
             // frmColdDrinks
             // 
@@ -121,6 +128,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmColdDrinks";
             this.Text = "frmColdDrinks";
+            this.Load += new System.EventHandler(this.FrmColdDrinks_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +144,6 @@
         private System.Windows.Forms.ComboBox cmdColdDrinks;
         private System.Windows.Forms.ListBox lstColdDrinks;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lstQty;
     }
 }
