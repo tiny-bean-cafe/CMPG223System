@@ -27,7 +27,7 @@ namespace TinyBeanCafeSystem
 
         private void BtnDone_Click(object sender, EventArgs e)
         {
-            
+
             emp.ShowDialog();
             this.Close();
         }

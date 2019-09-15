@@ -19,10 +19,9 @@ namespace TinyBeanCafeSystem
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
 
         SqlConnection connect;
-        SqlDataAdapter adapter;
         SqlCommand command;
         SqlDataReader dataReader;
-        DataSet dataset;
+
         public frmHotDrinks()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace TinyBeanCafeSystem
             
             items = lstHotDrinks.Items.ToString();
             /*emp.lstOrderName.Items.Add(items);*/
-            emp.ShowDialog();
+            emp.Visible = true;
             
             this.Close();
         }
@@ -42,7 +41,8 @@ namespace TinyBeanCafeSystem
         {
             lstHotDrinks.Items.Add(cmdHotDrinks.SelectedItem.ToString());
             lstQty.Items.Add(txtQty.Text);
-            emp.lstOrderName.Items.Add(cmdHotDrinks.SelectedItem.ToString());
+            emp.productName.Add(cmdHotDrinks.SelectedItem.ToString());
+            //emp.lstOrderName.Items.Add(cmdHotDrinks.SelectedItem.ToString());
             emp.lstOrderQty.Items.Add(txtQty.Text);
         }
 
