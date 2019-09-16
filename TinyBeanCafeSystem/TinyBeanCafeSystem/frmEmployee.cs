@@ -19,7 +19,7 @@ namespace TinyBeanCafeSystem
         }
 
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
-        
+
         SqlConnection connect;
         SqlDataAdapter adapter;
         SqlCommand command;
@@ -61,7 +61,7 @@ namespace TinyBeanCafeSystem
         {
             if (lstOrderName.Items.Count > 0)
             {
-                int length = lstOrderName.Items.Count - 1;
+                int length = int.Parse(lstOrderName.Items.Count.ToString()) - 1;
                 int count = 0;
                 double subTotal = 0;
                 double total = 0;
@@ -72,27 +72,27 @@ namespace TinyBeanCafeSystem
                     string sql = @"SELECT * FROM Product";
                     command = new SqlCommand(sql, connect);
                     dataReader = command.ExecuteReader();
-                    
+                    string item = lstOrderName.Items[count].ToString();
                     while (dataReader.Read())
                     {
 
-                        string item = lstOrderName.Items[0].ToString();
                         if (item == dataReader.GetValue(1).ToString())
                         {
                             lstOrderEach.Items.Add(dataReader.GetValue(3).ToString());
+                            total = double.Parse(lstOrderEach.Items[count].ToString()) * double.Parse(lstOrderQty.Items[count].ToString());
+                            lstOrderTotal.Items.Add(Math.Round(total, 2).ToString());
+                            subTotal += total;
                             count++;
                         }
-                    
+
                     }
                     connect.Close();
-                    total = double.Parse(lstOrderEach.Items[0].ToString()) * double.Parse(lstOrderQty.Items[0].ToString());
-                    lstOrderTotal.Items.Add(Math.Round(total, 2).ToString());
-                    subTotal += total;
+                    
                 }
 
                 //Determining Prices
                 double tax = 0;
-                double discount = 0; 
+                double discount = 0;
                 double balDue = 0;
                 tax = subTotal * 0.15;
                 total = subTotal + tax;
@@ -104,10 +104,11 @@ namespace TinyBeanCafeSystem
                 lblBalDue.Text = balDue.ToString("c");
             }
         }
-
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+    
+    }
+        /*private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-    }
+        }*/
+    
 }

@@ -17,6 +17,7 @@ namespace TinyBeanCafeSystem
         {
             InitializeComponent();
         }
+
         frmEmployee emp = new frmEmployee();
 
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
@@ -27,7 +28,6 @@ namespace TinyBeanCafeSystem
 
         private void BtnDone_Click(object sender, EventArgs e)
         {
-            
             emp.ShowDialog();
             this.Close();
         }
