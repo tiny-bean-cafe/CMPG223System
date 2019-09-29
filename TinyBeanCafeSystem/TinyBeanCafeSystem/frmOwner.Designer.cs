@@ -1221,6 +1221,7 @@
             this.btnDeleteCustomer.TabIndex = 1;
             this.btnDeleteCustomer.Text = "Delete";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // groupBox15
             // 
@@ -1301,6 +1302,7 @@
             this.btnUpdateCustomer.TabIndex = 1;
             this.btnUpdateCustomer.Text = "Update";
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // groupBox16
             // 
@@ -1378,6 +1380,7 @@
             this.btnSortCustomer.TabIndex = 1;
             this.btnSortCustomer.Text = "Sort";
             this.btnSortCustomer.UseVisualStyleBackColor = true;
+            this.btnSortCustomer.Click += new System.EventHandler(this.btnSortCustomer_Click);
             // 
             // dataGridViewCustomer
             // 

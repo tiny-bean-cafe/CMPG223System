@@ -24,7 +24,8 @@ namespace TinyBeanCafeSystem
         }
 
         SqlConnection connect;
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security = True";
+        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         // public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
 
@@ -159,6 +160,21 @@ namespace TinyBeanCafeSystem
                 }
             }
             connect.Close();
+        }
+        public void readCustomerIdIntoComboboxes()
+        {
+            connect.Open();
+            string readQuery = @"SELECT * FROM Customer";
+            cmd = new SqlCommand(readQuery, connect);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                if(!comboBoxCustomerID.Items.Contains(reader.GetValue(0)) || !comboBoxDeleteCustomerID.Items.Contains(reader.GetValue(0)))
+                {
+                    comboBoxCustomerID.Items.Add(reader.GetValue(0));
+                    comboBoxDeleteCustomerID.Items.Add(reader.GetValue(0));
+                }
+            }
         }
 
         private void FrmOwner_Load(object sender, EventArgs e)
@@ -354,6 +370,18 @@ namespace TinyBeanCafeSystem
             adapt.Fill(dataSet, "data");
             dataGridViewSupplier.DataSource = dataSet;
             dataGridViewSupplier.DataMember = "data";
+            connect.Close();
+        }
+        public void orderCustomerBy(string orderBy)
+        {
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            string slqOrder = "SELECT * FROM Customer ORDER BY " + orderBy;
+            cmd = new SqlCommand(slqOrder, connect);
+            dataSet = new DataSet();
+            adapt.Fill(dataSet, "data");
+            dataGridViewCustomer.DataSource = dataSet;
+            dataGridViewCustomer.DataMember = "data";
             connect.Close();
         }
 
@@ -706,7 +734,176 @@ namespace TinyBeanCafeSystem
 
         private void BtnAddCustomer_Click(object sender, EventArgs e)
         {
+            if (tbCustomerName.TextLength == 0)
+            {
+                errorProvider.SetError(tbCustomerName, "Please enter name");
+            }
+            else if (tbCustomerSurname.TextLength == 0)
+            {
+                errorProvider.SetError(tbCustomerName, "");
+                errorProvider.SetError(tbCustomerSurname, "Please enter surname");
+            }
+            else if (tbCustomerEmail.TextLength == 0)
+            {
+                errorProvider.SetError(tbCustomerName, "");
+                errorProvider.SetError(tbCustomerSurname, "");
+                errorProvider.SetError(tbCustomerEmail, "Please enter email");
+            }
+            else if (tbCustomerCell.TextLength == 0)
+            {
+                errorProvider.SetError(tbCustomerName, "");
+                errorProvider.SetError(tbCustomerSurname, "");
+                errorProvider.SetError(tbEmployeeEmail, "");
+                errorProvider.SetError(tbEmployeeCell, "Please enetr cell number");
+            }
+            else
+            {
+                connect = new SqlConnection(connectionString);
+                connect.Open();
+                string insertCustomer = @"INSERT INTO Customer VALUES(@name,@surname,@email,@cell)";
+                cmd = new SqlCommand(insertCustomer, connect);
+                cmd.Parameters.AddWithValue("@name", tbCustomerName.Text);
+                cmd.Parameters.AddWithValue("@surname", tbCustomerSurname.Text);
+                cmd.Parameters.AddWithValue("@email", tbCustomerEmail.Text);
+                cmd.Parameters.AddWithValue("@cell", tbCustomerCell.Text);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    loadCustomerTable();
+                    MessageBox.Show("Data successfully added !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbCustomerName.Clear();
+                    tbCustomerSurname.Clear();
+                    tbCustomerEmail.Clear();
+                    tbCustomerCell.Clear();
+                    tbCustomerName.Focus();
+                    readCustomerIdIntoComboboxes();
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                                     
+            }
+        }
 
+        private void btnUpdateCustomer_Click(object sender, EventArgs e)
+        {
+            int CustomerUpdateID;
+            if(comboBoxCustomerID.SelectedIndex >=0)
+            {
+                errorProvider.SetError(comboBoxCustomerID, "");
+                if(int.TryParse(comboBoxCustomerID.SelectedItem.ToString(), out CustomerUpdateID))
+                {
+                    errorProvider.SetError(comboBoxCustomerID, "");
+                    if(comboBoxCustomerUpdate.SelectedIndex >=0)
+                    {
+                        errorProvider.SetError(comboBoxCustomerUpdate, "");
+                        if(tbUpdateCustomer.TextLength !=0)
+                        {
+                            try
+                            {
+                                errorProvider.Clear();
+                                string updateField = comboBoxCustomerUpdate.SelectedItem.ToString();
+                                connect = new SqlConnection(connectionString);
+                                connect.Open();
+                                string field = comboBoxCustomerUpdate.SelectedItem.ToString();
+                                string updateQuery = @"UPDATE Customer SET " + updateField + " = '" + tbUpdateCustomer.Text + "' WHERE Cust_ID =   '" + updateField + "'";
+                                cmd = new SqlCommand(updateQuery, connect);
+                                cmd.ExecuteNonQuery();
+                                connect.Close();
+                                loadCustomerTable();
+                                MessageBox.Show("Update Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                tbUpdateCustomer.Clear();
+                                comboBoxCustomerID.Focus();
+                                comboBoxCustomerUpdate.Text = "";
+
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            errorProvider.SetError(tbUpdateCustomer, "Please enter update");
+                        }
+                    }
+                    else
+                    {
+                        errorProvider.SetError(comboBoxCustomerUpdate, "P;ease select field");                       
+                    }
+                }
+                else
+                {
+                    errorProvider.SetError(comboBoxCustomerID, "Invalid ID");
+                }
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxCustomerID, "Please select an ID");
+            }
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            int deleteId;
+            if(comboBoxDeleteCustomerID.SelectedIndex >= 0)
+            {
+                if(int.TryParse(comboBoxDeleteCustomerID.Text, out deleteId))
+                {
+                    try
+                    {
+                        DialogResult delResult = MessageBox.Show("Are you sure you want to delete row with ID" + comboBoxDeleteCustomerID.SelectedItem.ToString() + "?", "Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if(delResult==DialogResult.Yes)
+                        {
+                            delete("Customer", "Cust_ID", deleteId);
+                            loadCustomerTable();
+                            readCustomerIdIntoComboboxes();
+                            MessageBox.Show("Deletion Successful !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            errorProvider.SetError(comboBoxDeleteCustomerID, "");
+                            comboBoxDeleteCustomerID.Text = "";
+                            comboBoxDeleteCustomerID.Focus();
+
+                        }
+                        errorProvider.SetError(comboBoxDeleteCustomerID, "");
+
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    errorProvider.SetError(comboBoxDeleteCustomerID, "Invalid ID");
+                }
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxDeleteCustomerID, "Invalid ID");
+            }
+        }
+
+        private void btnSortCustomer_Click(object sender, EventArgs e)
+        {
+            if(rbCustomerID.Checked)
+            {
+                orderCustomerBy("Cust_ID");
+            }
+            if(rbCustomerName.Checked)
+            {
+                orderCustomerBy("Cust_Name");
+            }
+            if(rbCustomerEmail.Checked)
+            {
+                orderCustomerBy("Cust_Email");
+            }
+            if(rbCustomerCell.Checked)
+            {
+                orderCustomerBy("Cust_Cell");
+            }
         }
     }
 }

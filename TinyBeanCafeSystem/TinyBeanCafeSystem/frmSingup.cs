@@ -16,5 +16,10 @@ namespace TinyBeanCafeSystem
         {
             InitializeComponent();
         }
+
+        private void frmSingup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

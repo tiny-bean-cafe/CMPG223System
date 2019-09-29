@@ -88,6 +88,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmSingup";
             this.Text = "Singup";
+            this.Load += new System.EventHandler(this.frmSingup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

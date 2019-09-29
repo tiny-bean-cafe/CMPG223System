@@ -108,6 +108,7 @@
             this.Name = "frmRetrivePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forgot Password";
+            this.Load += new System.EventHandler(this.frmRetrivePass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

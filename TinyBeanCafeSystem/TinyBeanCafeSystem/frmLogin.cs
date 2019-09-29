@@ -17,12 +17,17 @@ namespace TinyBeanCafeSystem
         {
             InitializeComponent();
         }
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.md;Integrated Security = True";
        // String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         SqlConnection connect;
         SqlCommand command;
         SqlDataReader dataReader;
         String username, password, userPos;
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -125,8 +130,11 @@ namespace TinyBeanCafeSystem
              }
              connect.Close();     
              */
+            frmOwner ow = new frmOwner();
+            ow.ShowDialog();
+               /*
             frmEmployee emp = new frmEmployee();
-            emp.ShowDialog();
+            emp.ShowDialog();*/
         }
     }
 }
