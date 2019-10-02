@@ -24,10 +24,10 @@ namespace TinyBeanCafeSystem
         }
 
         SqlConnection connect;
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security = True";
+       // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security = True";
         //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         // public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
-        // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
 
         SqlDataAdapter adapt; 
         DataSet dataSet; 
@@ -904,6 +904,48 @@ namespace TinyBeanCafeSystem
             {
                 orderCustomerBy("Cust_Cell");
             }
+        }
+
+        private void tabReport_Enter(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+            int numHDrinks = 0, numCDrinks = 0, numBGoods = 0,totalNumOfGoods=0;
+            lblReportDate.Text += DateTime.Today.ToShortDateString();
+            lbxReport.Items.Add("Id\tGoods\t\tType\t\t\tQty");
+
+            connect.Open();
+            string readQuery = @"SELECT * FROM Report Order By Goods";
+            cmd = new SqlCommand(readQuery, connect);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                lbxReport.Items.Add(reader.GetValue(0)+ "\t" + reader.GetValue(1) + "\t\t" + reader.GetValue(2) + "\t\t\t"+ reader.GetValue(3));
+                if (reader.GetValue(1).ToString() == "Hot Drink")
+                {
+                    numHDrinks += Convert.ToInt32(reader.GetValue(3));
+                }
+                else if (reader.GetValue(1).ToString() == "Cold Drink")
+                {
+                    numCDrinks += Convert.ToInt32(reader.GetValue(3));
+                }
+                else
+                {
+                    numBGoods += Convert.ToInt32(reader.GetValue(3));
+
+                }
+
+            }
+            lbxReport.Items.Add("\n");
+            lbxReport.Items.Add("Total number of Hot Drinks Sold: " + numHDrinks);
+            lbxReport.Items.Add("Total number of Cold Drinks Sold: " + numCDrinks);
+            lbxReport.Items.Add("Total number of Baked Goods Sold: " + numBGoods);
+            totalNumOfGoods += numHDrinks + numCDrinks + numBGoods;
+            lbxReport.Items.Add("Total number of all goods: " + totalNumOfGoods);
         }
     }
 }

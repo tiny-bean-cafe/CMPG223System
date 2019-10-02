@@ -157,6 +157,10 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblReportDate = new System.Windows.Forms.Label();
+            this.lbxReport = new System.Windows.Forms.ListBox();
+            this.btnGenerateReport = new System.Windows.Forms.Button();
             this.ltbControlOwner.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -184,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.tabOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
+            this.tabReport.SuspendLayout();
             this.menuStripOwner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -1413,6 +1418,10 @@
             // 
             // tabReport
             // 
+            this.tabReport.Controls.Add(this.btnGenerateReport);
+            this.tabReport.Controls.Add(this.lbxReport);
+            this.tabReport.Controls.Add(this.lblReportDate);
+            this.tabReport.Controls.Add(this.label1);
             this.tabReport.Location = new System.Drawing.Point(4, 22);
             this.tabReport.Name = "tabReport";
             this.tabReport.Padding = new System.Windows.Forms.Padding(3);
@@ -1420,6 +1429,7 @@
             this.tabReport.TabIndex = 5;
             this.tabReport.Text = "Report";
             this.tabReport.UseVisualStyleBackColor = true;
+            this.tabReport.Enter += new System.EventHandler(this.tabReport_Enter);
             // 
             // menuStripOwner
             // 
@@ -1463,6 +1473,44 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(69, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(257, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Summary of Service";
+            // 
+            // lblReportDate
+            // 
+            this.lblReportDate.AutoSize = true;
+            this.lblReportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportDate.Location = new System.Drawing.Point(391, 23);
+            this.lblReportDate.Name = "lblReportDate";
+            this.lblReportDate.Size = new System.Drawing.Size(87, 31);
+            this.lblReportDate.TabIndex = 1;
+            this.lblReportDate.Text = "Date: ";
+            // 
+            // lbxReport
+            // 
+            this.lbxReport.FormattingEnabled = true;
+            this.lbxReport.Location = new System.Drawing.Point(58, 93);
+            this.lbxReport.Name = "lbxReport";
+            this.lbxReport.Size = new System.Drawing.Size(516, 225);
+            this.lbxReport.TabIndex = 2;
+            // 
+            // btnGenerateReport
+            // 
+            this.btnGenerateReport.Location = new System.Drawing.Point(263, 342);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Size = new System.Drawing.Size(102, 22);
+            this.btnGenerateReport.TabIndex = 3;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.UseVisualStyleBackColor = true;
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
             // 
             // frmOwner
             // 
@@ -1521,6 +1569,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.tabOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
+            this.tabReport.ResumeLayout(false);
+            this.tabReport.PerformLayout();
             this.menuStripOwner.ResumeLayout(false);
             this.menuStripOwner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -1658,5 +1708,9 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label lblReportDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbxReport;
+        private System.Windows.Forms.Button btnGenerateReport;
     }
 }
