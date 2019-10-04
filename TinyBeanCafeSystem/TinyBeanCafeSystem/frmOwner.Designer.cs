@@ -151,16 +151,20 @@
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.tabReport = new System.Windows.Forms.TabPage();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGenerateReport = new System.Windows.Forms.Button();
+            this.lbxReport = new System.Windows.Forms.ListBox();
+            this.lblReportDate = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStripOwner = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblReportDate = new System.Windows.Forms.Label();
-            this.lbxReport = new System.Windows.Forms.ListBox();
-            this.btnGenerateReport = new System.Windows.Forms.Button();
             this.ltbControlOwner.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -189,6 +193,7 @@
             this.tabOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.tabReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStripOwner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -1418,6 +1423,10 @@
             // 
             // tabReport
             // 
+            this.tabReport.Controls.Add(this.lblDate);
+            this.tabReport.Controls.Add(this.lblTo);
+            this.tabReport.Controls.Add(this.label4);
+            this.tabReport.Controls.Add(this.pictureBox1);
             this.tabReport.Controls.Add(this.btnGenerateReport);
             this.tabReport.Controls.Add(this.lbxReport);
             this.tabReport.Controls.Add(this.lblReportDate);
@@ -1431,6 +1440,85 @@
             this.tabReport.UseVisualStyleBackColor = true;
             this.tabReport.Enter += new System.EventHandler(this.tabReport_Enter);
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(17, 85);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(46, 17);
+            this.lblDate.TabIndex = 7;
+            this.lblDate.Text = "Date: ";
+            // 
+            // lblTo
+            // 
+            this.lblTo.AutoSize = true;
+            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.Location = new System.Drawing.Point(17, 68);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(33, 17);
+            this.lblTo.TabIndex = 6;
+            this.lblTo.Text = "To: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(567, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Tiny Bean Cafe";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TinyBeanCafeSystem.Properties.Resources.BaseFinal;
+            this.pictureBox1.Location = new System.Drawing.Point(556, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(137, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnGenerateReport
+            // 
+            this.btnGenerateReport.Location = new System.Drawing.Point(263, 368);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Size = new System.Drawing.Size(102, 22);
+            this.btnGenerateReport.TabIndex = 0;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.UseVisualStyleBackColor = true;
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
+            // 
+            // lbxReport
+            // 
+            this.lbxReport.FormattingEnabled = true;
+            this.lbxReport.Location = new System.Drawing.Point(20, 126);
+            this.lbxReport.MultiColumn = true;
+            this.lbxReport.Name = "lbxReport";
+            this.lbxReport.Size = new System.Drawing.Size(524, 212);
+            this.lbxReport.TabIndex = 2;
+            // 
+            // lblReportDate
+            // 
+            this.lblReportDate.AutoSize = true;
+            this.lblReportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportDate.Location = new System.Drawing.Point(17, 51);
+            this.lblReportDate.Name = "lblReportDate";
+            this.lblReportDate.Size = new System.Drawing.Size(48, 17);
+            this.lblReportDate.TabIndex = 1;
+            this.lblReportDate.Text = "From: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(140, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Summary of Service";
+            // 
             // menuStripOwner
             // 
             this.menuStripOwner.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1438,7 +1526,7 @@
             this.editToolStripMenuItem});
             this.menuStripOwner.Location = new System.Drawing.Point(0, 0);
             this.menuStripOwner.Name = "menuStripOwner";
-            this.menuStripOwner.Size = new System.Drawing.Size(726, 24);
+            this.menuStripOwner.Size = new System.Drawing.Size(777, 24);
             this.menuStripOwner.TabIndex = 1;
             this.menuStripOwner.Text = "menuStrip1";
             // 
@@ -1474,49 +1562,11 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Summary of Service";
-            // 
-            // lblReportDate
-            // 
-            this.lblReportDate.AutoSize = true;
-            this.lblReportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportDate.Location = new System.Drawing.Point(391, 23);
-            this.lblReportDate.Name = "lblReportDate";
-            this.lblReportDate.Size = new System.Drawing.Size(87, 31);
-            this.lblReportDate.TabIndex = 1;
-            this.lblReportDate.Text = "Date: ";
-            // 
-            // lbxReport
-            // 
-            this.lbxReport.FormattingEnabled = true;
-            this.lbxReport.Location = new System.Drawing.Point(58, 93);
-            this.lbxReport.Name = "lbxReport";
-            this.lbxReport.Size = new System.Drawing.Size(516, 225);
-            this.lbxReport.TabIndex = 2;
-            // 
-            // btnGenerateReport
-            // 
-            this.btnGenerateReport.Location = new System.Drawing.Point(263, 342);
-            this.btnGenerateReport.Name = "btnGenerateReport";
-            this.btnGenerateReport.Size = new System.Drawing.Size(102, 22);
-            this.btnGenerateReport.TabIndex = 3;
-            this.btnGenerateReport.Text = "Generate Report";
-            this.btnGenerateReport.UseVisualStyleBackColor = true;
-            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
-            // 
             // frmOwner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 460);
+            this.ClientSize = new System.Drawing.Size(777, 460);
             this.Controls.Add(this.ltbControlOwner);
             this.Controls.Add(this.menuStripOwner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1571,6 +1621,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
             this.tabReport.ResumeLayout(false);
             this.tabReport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStripOwner.ResumeLayout(false);
             this.menuStripOwner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -1712,5 +1763,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbxReport;
         private System.Windows.Forms.Button btnGenerateReport;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTo;
+        private System.Windows.Forms.Label label4;
     }
 }

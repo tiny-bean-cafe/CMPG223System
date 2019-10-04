@@ -38,13 +38,18 @@ namespace TinyBeanCafeSystem
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            /* connect = new SqlConnection(connectionString);
-             connect.Open();
-             String sql = @"SELECT * FROM Staff";
-             command = new SqlCommand(sql,connect);
-             dataReader = command.ExecuteReader();
+            connect = new SqlConnection(connectionString);
+            connect.Open();
+            String sql = @"SELECT * FROM Staff";
+            command = new SqlCommand(sql, connect);
+            dataReader = command.ExecuteReader();
 
-                }
+            while (dataReader.Read())
+            {
+                username = dataReader.GetValue(1).ToString();
+                password = dataReader.GetValue(2).ToString();
+                userPos = dataReader.GetValue(3).ToString();
+
                 if (username == tbUsername.Text && password == tbPassword.Text)
                 {
                     lblSearching.Text = "";
@@ -63,6 +68,7 @@ namespace TinyBeanCafeSystem
                         emp.ShowDialog();
                     }
                 }
+
                 else
                 {
                     if (tbUsername.Text == "" && tbPassword.Text == "")
@@ -89,10 +95,10 @@ namespace TinyBeanCafeSystem
                         tbPassword.SelectAll();
                         lblSearching.Text = "The username or the password is incorrect";
                     }
-                    
+                }
                 }
 
-                 }
+                /* }
                  if (username == tbUsername.Text && password == tbPassword.Text)
                  {
                      lblSearching.Text = "";
@@ -138,4 +144,4 @@ namespace TinyBeanCafeSystem
             emp.ShowDialog();
         }
     }
-}
+    }

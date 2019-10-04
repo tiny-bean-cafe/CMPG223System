@@ -909,15 +909,18 @@ namespace TinyBeanCafeSystem
 
         private void tabReport_Enter(object sender, EventArgs e)
         {
-           
-
+            
         }
 
         private void btnGenerateReport_Click(object sender, EventArgs e)
         {
+
             int numHDrinks = 0, numCDrinks = 0, numBGoods = 0,totalNumOfGoods=0;
-            lblReportDate.Text += DateTime.Today.ToShortDateString();
-            lbxReport.Items.Add("Id\tGoods\t\tType\t\t\tQty");
+            lblReportDate.Text += "2019/1/1";
+            lblTo.Text += DateTime.Today.ToShortDateString();
+            lblDate.Text += DateTime.Today.ToShortDateString();
+
+            lbxReport.Items.Add("Id\tGoods\t\tType\t\tQty");
 
             connect.Open();
             string readQuery = @"SELECT * FROM Report Order By Goods";
@@ -925,7 +928,7 @@ namespace TinyBeanCafeSystem
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                lbxReport.Items.Add(reader.GetValue(0)+ "\t" + reader.GetValue(1) + "\t\t" + reader.GetValue(2) + "\t\t\t"+ reader.GetValue(3));
+                lbxReport.Items.Add(reader.GetValue(0)+"\t"+ reader.GetValue(1)+"\t\t"+ reader.GetValue(2)+"\t\t"+reader.GetValue(3));
                 if (reader.GetValue(1).ToString() == "Hot Drink")
                 {
                     numHDrinks += Convert.ToInt32(reader.GetValue(3));
@@ -937,7 +940,6 @@ namespace TinyBeanCafeSystem
                 else
                 {
                     numBGoods += Convert.ToInt32(reader.GetValue(3));
-
                 }
 
             }
@@ -947,6 +949,7 @@ namespace TinyBeanCafeSystem
             lbxReport.Items.Add("Total number of Baked Goods Sold: " + numBGoods);
             totalNumOfGoods += numHDrinks + numCDrinks + numBGoods;
             lbxReport.Items.Add("Total number of all goods: " + totalNumOfGoods);
+            
         }
     }
 }
