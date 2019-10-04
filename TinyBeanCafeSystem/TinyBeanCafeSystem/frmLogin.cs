@@ -17,9 +17,10 @@ namespace TinyBeanCafeSystem
         {
             InitializeComponent();
         }
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+       // String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         // String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.md;Integrated Security = True";
         // String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NkTheAstranout\Documents\(2019) Senior Year\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         SqlConnection connect;
         SqlCommand command;
         SqlDataReader dataReader;
@@ -64,8 +65,8 @@ namespace TinyBeanCafeSystem
                     }
                     else
                     {
-                        frmEmployee emp = new frmEmployee();
-                        emp.ShowDialog();
+                        frmEmployee employee = new frmEmployee();
+                        employee.ShowDialog();
                     }
                 }
 
@@ -98,50 +99,50 @@ namespace TinyBeanCafeSystem
                 }
                 }
 
-                /* }
-                 if (username == tbUsername.Text && password == tbPassword.Text)
-                 {
-                     lblSearching.Text = "";
-                     tbUsername.Text = "";
-                     tbPassword.Text = "";
+            /* }
+             if (username == tbUsername.Text && password == tbPassword.Text)
+             {
+                 lblSearching.Text = "";
+                 tbUsername.Text = "";
+                 tbPassword.Text = "";
 
-                     if (userPos == "O")
-                     {
-                         frmOwner owner = new frmOwner();
-                         owner.ShowDialog();
-                         //this.Close();
-                     }
-                     else
-                     {
-                         frmEmployee emp = new frmEmployee();
-                         emp.ShowDialog();
-                        // this.Close();
-                     }
+                 if (userPos == "O")
+                 {
+                     frmOwner owner = new frmOwner();
+                     owner.ShowDialog();
+                     //this.Close();
                  }
                  else
                  {
-                     if (username != tbUsername.Text)
-                     {
-                         tbUsername.SelectAll();
-                         tbPassword.SelectAll();
-                         lblSearching.Text = "The username or the password is incorrect";
-                     }
-                     else if (password != tbPassword.Text)
-                     {
-                         tbUsername.SelectAll();
-                         tbPassword.SelectAll();
-                         lblSearching.Text = "The username or the password is incorrect";
-                     }
+                     frmEmployee emp = new frmEmployee();
+                     emp.ShowDialog();
+                    // this.Close();
                  }
-
              }
-             connect.Close();     
-             *//*
-            frmOwner ow = new frmOwner();
-            ow.ShowDialog();
-               */
-            frmEmployee emp = new frmEmployee();
-            emp.ShowDialog();
+             else
+             {
+                 if (username != tbUsername.Text)
+                 {
+                     tbUsername.SelectAll();
+                     tbPassword.SelectAll();
+                     lblSearching.Text = "The username or the password is incorrect";
+                 }
+                 else if (password != tbPassword.Text)
+                 {
+                     tbUsername.SelectAll();
+                     tbPassword.SelectAll();
+                     lblSearching.Text = "The username or the password is incorrect";
+                 }
+             }
+
+         }*/
+         connect.Close();     
+        /* 
+        frmOwner ow = new frmOwner();
+        ow.ShowDialog();
+
+        frmEmployee emp = new frmEmployee();
+        emp.ShowDialog();*/
         }
     }
     }

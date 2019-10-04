@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDone = new System.Windows.Forms.Button();
             this.lblQty = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
@@ -36,7 +37,9 @@
             this.lstColdDrinks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lstQty = new System.Windows.Forms.ListBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDone
@@ -114,6 +117,10 @@
             this.lstQty.Size = new System.Drawing.Size(32, 121);
             this.lstQty.TabIndex = 0;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmColdDrinks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +137,7 @@
             this.Text = "frmColdDrinks";
             this.Load += new System.EventHandler(this.FrmColdDrinks_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +153,6 @@
         private System.Windows.Forms.ListBox lstColdDrinks;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox lstQty;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

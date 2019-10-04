@@ -17,8 +17,8 @@ namespace TinyBeanCafeSystem
         frmEmployee emp = new frmEmployee();
 
         //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
-         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
-
+        // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vodacom-pc\Desktop\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
         SqlConnection connect;
         SqlDataAdapter adapter;
         SqlCommand command;
@@ -49,6 +49,16 @@ namespace TinyBeanCafeSystem
                 lstQty.Items.Add(txtQty.Text);
                 emp.lstOrderName.Items.Add(cmdHotDrinks.SelectedItem.ToString());
                 emp.lstOrderQty.Items.Add(txtQty.Text);
+
+                string insertQuery = "INSERT INTO Report VALUES(@Goods, @Type, @Qty)";
+                connect = new SqlConnection(connectionString);
+                connect.Open();
+                command = new SqlCommand(insertQuery, connect);
+                command.Parameters.AddWithValue("@Goods", "Hot Drink");
+                command.Parameters.AddWithValue("@Type", cmdHotDrinks.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@Qty", txtQty.Text);
+                command.ExecuteNonQuery();
+                connect.Close();
             }
             else
             {
