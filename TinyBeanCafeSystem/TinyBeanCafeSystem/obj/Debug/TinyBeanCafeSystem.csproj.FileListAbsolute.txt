@@ -103,3 +103,6 @@ C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCa
 C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmSingup.resources
 C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmRetrivePass.resources
 C:\Users\ciddy\Downloads\year 2019\second semester\CMPG 223\TBeanProject\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmSingup.resources
+C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmCustomerTab.resources
+C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmRetrivePass.resources
+C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\obj\Debug\TinyBeanCafeSystem.frmSingup.resources

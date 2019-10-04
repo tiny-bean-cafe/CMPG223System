@@ -18,7 +18,8 @@ namespace TinyBeanCafeSystem
             InitializeComponent();
         }
 
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mellison\Documents\CMPG 223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
+        public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NOMFUNDO\Desktop\YEAR2\Semester 2\CMPG223\CMPG223System\TinyBeanCafeSystem\TinyBeanCafeSystem\TinyBeanData.mdf;Integrated Security=True";
 
         SqlConnection connect;
         SqlDataAdapter adapter;
@@ -102,9 +103,23 @@ namespace TinyBeanCafeSystem
                 lblSubTotal.Text = subTotal.ToString("c");
                 //lblDiscount = discount.ToString("c");
                 lblBalDue.Text = balDue.ToString("c");
+                getBalanceDue = balDue;
             }
         }
-    
+
+        public double getBalanceDue { get; set; }
+
+        private void btnTab_Click(object sender, EventArgs e)
+        {
+            frmCustomerTab customerTab = new frmCustomerTab();
+            customerTab.ShowDialog();
+            this.Close();
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+
+        }
     }
         /*private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {

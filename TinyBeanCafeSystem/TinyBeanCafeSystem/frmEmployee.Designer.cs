@@ -102,7 +102,6 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.logOutToolStripMenuItem.Text = "Log out";
-            //this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // lblTotal
             // 
@@ -340,12 +339,13 @@
             // 
             // btnOrders
             // 
-            this.btnOrders.Location = new System.Drawing.Point(341, 23);
+            this.btnOrders.Location = new System.Drawing.Point(341, 24);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(111, 28);
             this.btnOrders.TabIndex = 12;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnTab
             // 
@@ -355,6 +355,7 @@
             this.btnTab.TabIndex = 11;
             this.btnTab.Text = "Customer Tab";
             this.btnTab.UseVisualStyleBackColor = true;
+            this.btnTab.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // label3
             // 
