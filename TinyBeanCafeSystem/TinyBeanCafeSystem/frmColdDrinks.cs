@@ -44,10 +44,20 @@ namespace TinyBeanCafeSystem
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            lstColdDrinks.Items.Add(cmdColdDrinks.SelectedItem.ToString());
-            emp.lstOrderName.Items.Add(cmdColdDrinks.SelectedItem.ToString());
-            lstQty.Items.Add(txtQty.Text);
-            emp.lstOrderQty.Items.Add(txtQty.Text);
+            
+            int qty = 0;
+            if (int.TryParse(txtQty.Text, out qty))
+            {
+                lstColdDrinks.Items.Add(cmdColdDrinks.SelectedItem.ToString());
+                emp.lstOrderName.Items.Add(cmdColdDrinks.SelectedItem.ToString());
+                lstQty.Items.Add(txtQty.Text);
+                emp.lstOrderQty.Items.Add(txtQty.Text);
+            }
+            else
+            {
+                txtQty.Focus();
+                errorProvider1.SetError(txtQty, "Please enter an integer value for the quantity.");
+            }
         }
 
         private void CmdColdDrinks_SelectedIndexChanged(object sender, EventArgs e)

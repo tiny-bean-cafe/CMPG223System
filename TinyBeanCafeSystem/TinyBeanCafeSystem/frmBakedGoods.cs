@@ -54,10 +54,41 @@ namespace TinyBeanCafeSystem
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            lstBakedGoods.Items.Add(cmdBakedGoods.SelectedItem.ToString());
-            emp.lstOrderName.Items.Add(cmdBakedGoods.SelectedItem.ToString());
-            lstQty.Items.Add(txtQty.Text);
-            emp.lstOrderQty.Items.Add(txtQty.Text);
+            int qty = 0;
+            if (int.TryParse(txtQty.Text, out qty))
+            {
+                lstBakedGoods.Items.Add(cmdBakedGoods.SelectedItem.ToString());
+                emp.lstOrderName.Items.Add(cmdBakedGoods.SelectedItem.ToString());
+                lstQty.Items.Add(qty);
+                emp.lstOrderQty.Items.Add(qty);
+            }
+            else
+            {
+                txtQty.Focus();
+                errorProvider1.SetError(txtQty, "Please enter an integer value for the quantity.");
+            }
+                
+            
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblQty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void BtnAdd_Validating(object sender, CancelEventArgs e)
+        {
+            
         }
     }
 }

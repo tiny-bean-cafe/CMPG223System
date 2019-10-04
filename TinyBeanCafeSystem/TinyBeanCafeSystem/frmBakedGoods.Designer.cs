@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDone = new System.Windows.Forms.Button();
             this.lblQty = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
@@ -36,7 +37,9 @@
             this.lstBakedGoods = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lstQty = new System.Windows.Forms.ListBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDone
@@ -58,12 +61,13 @@
             this.lblQty.Size = new System.Drawing.Size(59, 16);
             this.lblQty.TabIndex = 18;
             this.lblQty.Text = "Quantity:";
+            this.lblQty.Click += new System.EventHandler(this.LblQty_Click);
             // 
             // txtQty
             // 
             this.txtQty.Location = new System.Drawing.Point(83, 55);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(77, 20);
+            this.txtQty.Size = new System.Drawing.Size(62, 20);
             this.txtQty.TabIndex = 17;
             // 
             // btnAdd
@@ -75,6 +79,7 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btnAdd.Validating += new System.ComponentModel.CancelEventHandler(this.BtnAdd_Validating);
             // 
             // cmdBakedGoods
             // 
@@ -100,6 +105,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(302, 139);
             this.panel1.TabIndex = 20;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // lstQty
             // 
@@ -108,6 +114,10 @@
             this.lstQty.Name = "lstQty";
             this.lstQty.Size = new System.Drawing.Size(30, 121);
             this.lstQty.TabIndex = 0;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmBakedGoods
             // 
@@ -125,6 +135,7 @@
             this.Text = "frmBakedGoods";
             this.Load += new System.EventHandler(this.FrmBakedGoods_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +151,6 @@
         public System.Windows.Forms.TextBox txtQty;
         public System.Windows.Forms.ComboBox cmdBakedGoods;
         private System.Windows.Forms.ListBox lstQty;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

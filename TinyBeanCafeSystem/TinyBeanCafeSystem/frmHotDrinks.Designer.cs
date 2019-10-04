@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDone = new System.Windows.Forms.Button();
             this.lblQty = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
@@ -36,7 +37,9 @@
             this.lstHotDrinks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lstQty = new System.Windows.Forms.ListBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDone
@@ -63,7 +66,7 @@
             // 
             this.txtQty.Location = new System.Drawing.Point(83, 55);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(77, 20);
+            this.txtQty.Size = new System.Drawing.Size(56, 20);
             this.txtQty.TabIndex = 10;
             // 
             // btnAdd
@@ -110,6 +113,10 @@
             this.lstQty.Size = new System.Drawing.Size(34, 121);
             this.lstQty.TabIndex = 0;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmHotDrinks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +133,7 @@
             this.Text = "frmHotDrinks";
             this.Load += new System.EventHandler(this.FrmHotDrinks_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +149,6 @@
         public System.Windows.Forms.ComboBox cmdHotDrinks;
         public System.Windows.Forms.ListBox lstHotDrinks;
         private System.Windows.Forms.ListBox lstQty;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

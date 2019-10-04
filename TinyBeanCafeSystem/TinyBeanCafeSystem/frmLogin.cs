@@ -129,12 +129,12 @@ namespace TinyBeanCafeSystem
 
              }
              connect.Close();     
-             */
+             *//*
             frmOwner ow = new frmOwner();
             ow.ShowDialog();
-               /*
+               */
             frmEmployee emp = new frmEmployee();
-            emp.ShowDialog();*/
+            emp.ShowDialog();
         }
     }
 }
