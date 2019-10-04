@@ -114,6 +114,7 @@ namespace TinyBeanCafeSystem
             frmEmployee emp = new frmEmployee();
             double balanceDue = emp.getBalanceDue;
             double Bal;
+            
 
             try
             {
@@ -136,6 +137,7 @@ namespace TinyBeanCafeSystem
             {
                 MessageBox.Show(err.Message);
             }
+            emp.ShowDialog();
         }
 
         private void lblLimit_Click(object sender, EventArgs e)
@@ -207,20 +209,7 @@ namespace TinyBeanCafeSystem
                 MessageBox.Show(err.Message);
             }
 
-            /*connect = new SqlConnection(connectionString);
-            connect.Open();
-            string sql = @"SELECT * FROM Product";
-            command = new SqlCommand(sql, connect);
-            dataReader = command.ExecuteReader();
-
-            while (dataReader.Read())
-            {
-                if (dataReader.GetValue(2).ToString() == "Baked Goods")
-                {
-                    cmdBakedGoods.Items.Add(dataReader.GetValue(1).ToString());
-                }
-            }
-            connect.Close();*/
+            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

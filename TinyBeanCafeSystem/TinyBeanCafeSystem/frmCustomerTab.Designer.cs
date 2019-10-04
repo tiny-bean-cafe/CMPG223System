@@ -34,7 +34,18 @@
             this.txtTabID = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBoxExistingCustomer = new System.Windows.Forms.GroupBox();
+            this.btnCal = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnShowTab = new System.Windows.Forms.Button();
+            this.lblLName = new System.Windows.Forms.Label();
+            this.lblFName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBoxNewCust = new System.Windows.Forms.GroupBox();
+            this.lblCustId = new System.Windows.Forms.Label();
+            this.lblEmpNo = new System.Windows.Forms.Label();
+            this.txtCusID = new System.Windows.Forms.TextBox();
+            this.txtEmpID = new System.Windows.Forms.TextBox();
             this.lblLimit = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
             this.txtLimit = new System.Windows.Forms.TextBox();
@@ -49,17 +60,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtCell = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblFName = new System.Windows.Forms.Label();
-            this.lblLName = new System.Windows.Forms.Label();
-            this.btnShowTab = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.txtEmpID = new System.Windows.Forms.TextBox();
-            this.txtCusID = new System.Windows.Forms.TextBox();
-            this.lblEmpNo = new System.Windows.Forms.Label();
-            this.lblCustId = new System.Windows.Forms.Label();
-            this.btnCal = new System.Windows.Forms.Button();
             this.groupBoxExistingCustomer.SuspendLayout();
             this.groupBoxNewCust.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +127,70 @@
             this.groupBoxExistingCustomer.TabStop = false;
             this.groupBoxExistingCustomer.Text = "Existing Customer";
             // 
+            // btnCal
+            // 
+            this.btnCal.Location = new System.Drawing.Point(32, 327);
+            this.btnCal.Name = "btnCal";
+            this.btnCal.Size = new System.Drawing.Size(228, 23);
+            this.btnCal.TabIndex = 13;
+            this.btnCal.Text = "Calculate";
+            this.btnCal.UseVisualStyleBackColor = true;
+            this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(24, 222);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(280, 95);
+            this.listBox1.TabIndex = 12;
+            // 
+            // btnShowTab
+            // 
+            this.btnShowTab.Location = new System.Drawing.Point(32, 193);
+            this.btnShowTab.Name = "btnShowTab";
+            this.btnShowTab.Size = new System.Drawing.Size(228, 23);
+            this.btnShowTab.TabIndex = 11;
+            this.btnShowTab.Text = "Show Tab";
+            this.btnShowTab.UseVisualStyleBackColor = true;
+            this.btnShowTab.Click += new System.EventHandler(this.btnShowTab_Click);
+            // 
+            // lblLName
+            // 
+            this.lblLName.AutoSize = true;
+            this.lblLName.Location = new System.Drawing.Point(167, 152);
+            this.lblLName.Name = "lblLName";
+            this.lblLName.Size = new System.Drawing.Size(35, 13);
+            this.lblLName.TabIndex = 10;
+            this.lblLName.Text = "label5";
+            // 
+            // lblFName
+            // 
+            this.lblFName.AutoSize = true;
+            this.lblFName.Location = new System.Drawing.Point(167, 126);
+            this.lblFName.Name = "lblFName";
+            this.lblFName.Size = new System.Drawing.Size(35, 13);
+            this.lblFName.TabIndex = 9;
+            this.lblFName.Text = "label4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Customer Surname:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Customer Name:";
+            // 
             // groupBoxNewCust
             // 
             this.groupBoxNewCust.Controls.Add(this.lblCustId);
@@ -154,6 +218,38 @@
             this.groupBoxNewCust.TabStop = false;
             this.groupBoxNewCust.Text = "Add New Customer";
             this.groupBoxNewCust.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // lblCustId
+            // 
+            this.lblCustId.AutoSize = true;
+            this.lblCustId.Location = new System.Drawing.Point(236, 152);
+            this.lblCustId.Name = "lblCustId";
+            this.lblCustId.Size = new System.Drawing.Size(48, 13);
+            this.lblCustId.TabIndex = 26;
+            this.lblCustId.Text = "Cust_ID:";
+            // 
+            // lblEmpNo
+            // 
+            this.lblEmpNo.AutoSize = true;
+            this.lblEmpNo.Location = new System.Drawing.Point(236, 113);
+            this.lblEmpNo.Name = "lblEmpNo";
+            this.lblEmpNo.Size = new System.Drawing.Size(51, 13);
+            this.lblEmpNo.TabIndex = 25;
+            this.lblEmpNo.Text = "Emp_No:";
+            // 
+            // txtCusID
+            // 
+            this.txtCusID.Location = new System.Drawing.Point(307, 149);
+            this.txtCusID.Name = "txtCusID";
+            this.txtCusID.Size = new System.Drawing.Size(100, 20);
+            this.txtCusID.TabIndex = 24;
+            // 
+            // txtEmpID
+            // 
+            this.txtEmpID.Location = new System.Drawing.Point(307, 110);
+            this.txtEmpID.Name = "txtEmpID";
+            this.txtEmpID.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpID.TabIndex = 23;
             // 
             // lblLimit
             // 
@@ -274,102 +370,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Customer Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Customer Surname:";
-            // 
-            // lblFName
-            // 
-            this.lblFName.AutoSize = true;
-            this.lblFName.Location = new System.Drawing.Point(167, 126);
-            this.lblFName.Name = "lblFName";
-            this.lblFName.Size = new System.Drawing.Size(35, 13);
-            this.lblFName.TabIndex = 9;
-            this.lblFName.Text = "label4";
-            // 
-            // lblLName
-            // 
-            this.lblLName.AutoSize = true;
-            this.lblLName.Location = new System.Drawing.Point(167, 152);
-            this.lblLName.Name = "lblLName";
-            this.lblLName.Size = new System.Drawing.Size(35, 13);
-            this.lblLName.TabIndex = 10;
-            this.lblLName.Text = "label5";
-            // 
-            // btnShowTab
-            // 
-            this.btnShowTab.Location = new System.Drawing.Point(32, 193);
-            this.btnShowTab.Name = "btnShowTab";
-            this.btnShowTab.Size = new System.Drawing.Size(228, 23);
-            this.btnShowTab.TabIndex = 11;
-            this.btnShowTab.Text = "Show Tab";
-            this.btnShowTab.UseVisualStyleBackColor = true;
-            this.btnShowTab.Click += new System.EventHandler(this.btnShowTab_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(24, 222);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(280, 95);
-            this.listBox1.TabIndex = 12;
-            // 
-            // txtEmpID
-            // 
-            this.txtEmpID.Location = new System.Drawing.Point(307, 110);
-            this.txtEmpID.Name = "txtEmpID";
-            this.txtEmpID.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpID.TabIndex = 23;
-            // 
-            // txtCusID
-            // 
-            this.txtCusID.Location = new System.Drawing.Point(307, 149);
-            this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(100, 20);
-            this.txtCusID.TabIndex = 24;
-            // 
-            // lblEmpNo
-            // 
-            this.lblEmpNo.AutoSize = true;
-            this.lblEmpNo.Location = new System.Drawing.Point(236, 113);
-            this.lblEmpNo.Name = "lblEmpNo";
-            this.lblEmpNo.Size = new System.Drawing.Size(51, 13);
-            this.lblEmpNo.TabIndex = 25;
-            this.lblEmpNo.Text = "Emp_No:";
-            // 
-            // lblCustId
-            // 
-            this.lblCustId.AutoSize = true;
-            this.lblCustId.Location = new System.Drawing.Point(236, 152);
-            this.lblCustId.Name = "lblCustId";
-            this.lblCustId.Size = new System.Drawing.Size(48, 13);
-            this.lblCustId.TabIndex = 26;
-            this.lblCustId.Text = "Cust_ID:";
-            // 
-            // btnCal
-            // 
-            this.btnCal.Location = new System.Drawing.Point(116, 327);
-            this.btnCal.Name = "btnCal";
-            this.btnCal.Size = new System.Drawing.Size(75, 23);
-            this.btnCal.TabIndex = 13;
-            this.btnCal.Text = "button1";
-            this.btnCal.UseVisualStyleBackColor = true;
-            this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
             // 
             // frmCustomerTab
             // 
